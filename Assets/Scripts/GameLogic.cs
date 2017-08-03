@@ -16,14 +16,22 @@ public class GameLogic : MonoBehaviour {
 
 	public static bool GameOver = false;
 
+	private GameObject lights;
+
 	//public GameObject PointsText;
 	//public Text PointsText;
 
 	// Use this for initialization
 	void Start () {
-		gravy = -15.0f;
+		Screen.SetResolution (Screen.currentResolution.width, Screen.currentResolution.height, true);
+
+		gravy = -50.0f;
 		//PointsText = GetComponent<Text>();
 		//PointsText.text = "hola";
+
+		lights = (GameObject)GameObject.FindGameObjectWithTag ("Lights");
+
+		lights.gameObject.SetActive (false);
 		
 	}
 	
@@ -37,6 +45,11 @@ public class GameLogic : MonoBehaviour {
 
 		//text points
 		//PointsText.text = Points.ToString();
+
+		if (Points > 1)
+		{
+			lights.gameObject.SetActive (true);
+		}
 	}
 
 

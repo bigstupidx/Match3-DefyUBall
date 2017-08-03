@@ -16,7 +16,7 @@ public class Double : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collision)
 	{
-		if (collision.gameObject.tag == "DoublePoints") {
+		if (collision.gameObject.tag == "DoublePoints" ) {
 
 			GameLogic.DoubleP = true;
 			Destroy (collision.gameObject);

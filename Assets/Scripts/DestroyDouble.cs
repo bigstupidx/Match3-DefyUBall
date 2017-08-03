@@ -18,11 +18,11 @@ public class DestroyDouble : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter(Collision collision)
+	void OnTriggerEnter(Collider collision)
 	{
-		if (collision.gameObject.tag == "GameOver") {
+		if (collision.gameObject.tag == "GameOver" || collision.gameObject.tag == "Respawn")  {
 
-
+			GameLogic.DoubleP = true;
 			Destroy (this.gameObject);
 		}
 	}

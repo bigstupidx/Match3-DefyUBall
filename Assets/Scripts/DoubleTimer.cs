@@ -20,7 +20,7 @@ public class DoubleTimer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Debug.Log (timeLeft);
+		//Debug.Log (timeLeft);
 
 		if(GameLogic.DoubleP == true)
 		{

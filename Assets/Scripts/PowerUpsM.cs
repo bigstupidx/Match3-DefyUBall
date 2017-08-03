@@ -6,7 +6,7 @@ public class PowerUpsM : MonoBehaviour {
 
 	private float puntoInicialX;
 	private float pong;
-	public float speed = 25.0f;
+	public float speed = 45.0f;
 	// Use this for initialization
 
 
@@ -23,7 +23,7 @@ public class PowerUpsM : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		pong = Mathf.PingPong (Time.time * speed, 10);
+		pong = Mathf.PingPong (Time.time * speed, 80);
 
 		this.gameObject.transform.position = new Vector3 (pong + puntoInicialX, transform.position.y, transform.position.z);
 	}

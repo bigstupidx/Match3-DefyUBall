@@ -18,7 +18,7 @@ public class Ball : MonoBehaviour {
 
 	void Start () {
 		//Bounce Force
-		bounce = 380.0f;
+		bounce = 2100.0f;
 
 
 		}
@@ -28,7 +28,7 @@ public class Ball : MonoBehaviour {
 	void Update () {
 
 		//Random Direction bounce2
-		bounce2 = Random.Range (-120,120);
+		bounce2 = Random.Range (-800,800);
 
 		//Debug.Log (onTouch);
 		//Debug.Log (bounce2);
@@ -58,11 +58,11 @@ public class Ball : MonoBehaviour {
 
 		if (collision.gameObject.tag == "limitL") 
 		{
-			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (50.0f, 0.0f));
+			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (1500.0f, 0.0f));
 		}
 		if (collision.gameObject.tag == "limitR") 
 		{
-			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (-50.0f, 0.0f));
+			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (-1500.0f, 0.0f));
 		}
 
 		if (collision.gameObject.tag == "GameOver") 

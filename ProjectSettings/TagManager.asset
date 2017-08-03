@@ -12,6 +12,7 @@ TagManager:
   - limitL
   - Points
   - DoublePoints
+  - Lights
   layers:
   - Default
   - TransparentFX
