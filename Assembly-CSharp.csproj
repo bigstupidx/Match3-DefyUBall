@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1DD40202-FBA4-13C5-1D84-78A44C868B80}</ProjectGuid>
+    <ProjectGuid>{17A60CB8-03A2-EEC8-AE44-8DCF0E3EDD85}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Ball.cs" />
      <Compile Include="Assets\Scripts\DestroyDouble.cs" />
      <Compile Include="Assets\Scripts\Double.cs" />
+     <Compile Include="Assets\Scripts\DoubleTimer.cs" />
      <Compile Include="Assets\Scripts\GameLogic.cs" />
      <Compile Include="Assets\Scripts\GameOVer.cs" />
      <Compile Include="Assets\Scripts\PDOUBLE.cs" />
