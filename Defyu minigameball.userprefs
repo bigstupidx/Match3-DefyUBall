@@ -1,0 +1,21 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DestroyDouble.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GameLogic.cs" Line="14" Column="37" />
+      <File FileName="Assets\Scripts\Ball.cs" Line="51" Column="5" />
+      <File FileName="Assets\Scripts\Player.cs" Line="43" Column="2" />
+      <File FileName="..\..\..\Downloads\JellyAdventureFINALV1\JellyAdventure\Jelly Adventure\Assets\Scripts\JellyMove.cs" Line="56" Column="90" />
+      <File FileName="..\..\..\Downloads\MadHerov1.4\MadHerov1.4\MadHero\Assets\Scripts\Enemmies\boss\Bosss.cs" Line="108" Column="42" />
+      <File FileName="Assets\Scripts\Score.cs" Line="16" Column="3" />
+      <File FileName="Assets\Scripts\PowerUpsM.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\PDOUBLE.cs" Line="30" Column="4" />
+      <File FileName="Assets\Scripts\Double.cs" Line="17" Column="44" />
+      <File FileName="Assets\Scripts\DestroyDouble.cs" Line="19" Column="48" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
