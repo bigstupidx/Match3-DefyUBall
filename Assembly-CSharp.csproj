@@ -51,16 +51,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Ball.cs" />
-     <Compile Include="Assets\Scripts\DestroyDouble.cs" />
-     <Compile Include="Assets\Scripts\Double.cs" />
-     <Compile Include="Assets\Scripts\DoubleTimer.cs" />
+     <Compile Include="Assets\Scripts\Game\Ball.cs" />
+     <Compile Include="Assets\Scripts\Game\BMEnu.cs" />
+     <Compile Include="Assets\Scripts\Game\ChangeSprite.cs" />
+     <Compile Include="Assets\Scripts\Game\DestroyDouble.cs" />
+     <Compile Include="Assets\Scripts\Game\Double.cs" />
+     <Compile Include="Assets\Scripts\Game\DoubleTimer.cs" />
+     <Compile Include="Assets\Scripts\Game\GameOVer.cs" />
+     <Compile Include="Assets\Scripts\Game\PDOUBLE.cs" />
+     <Compile Include="Assets\Scripts\Game\Player.cs" />
+     <Compile Include="Assets\Scripts\Game\PowerUpsM.cs" />
+     <Compile Include="Assets\Scripts\Game\Score.cs" />
      <Compile Include="Assets\Scripts\GameLogic.cs" />
-     <Compile Include="Assets\Scripts\GameOVer.cs" />
-     <Compile Include="Assets\Scripts\PDOUBLE.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\PowerUpsM.cs" />
-     <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\Menu\ChangeSkin.cs" />
+     <Compile Include="Assets\Scripts\Menu\ChangeSkinP.cs" />
+     <Compile Include="Assets\Scripts\Menu\LeftArrow.cs" />
+     <Compile Include="Assets\Scripts\Menu\LeftArrowP.cs" />
+     <Compile Include="Assets\Scripts\Menu\Playbutt.cs" />
+     <Compile Include="Assets\Scripts\Menu\RightArrow.cs" />
+     <Compile Include="Assets\Scripts\Menu\RightArrowP.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
