@@ -25,7 +25,7 @@ public class DoubleTimer : MonoBehaviour {
 		if(GameLogic.DoubleP == true)
 		{
 		timeLeft -= Time.deltaTime;
-			timer.text = "X2: " + timeLeft.ToString ("N0");
+			timer.text = "X2 Score: " + timeLeft.ToString ("N0");
 			if (timeLeft < 0) 
 			{
 				GameLogic.DoubleP = false;

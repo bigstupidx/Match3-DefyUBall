@@ -13,6 +13,8 @@ public class GameLogic : MonoBehaviour {
 	public static int currentPoints=0;
 
 	public static bool DoubleP = false;
+	public static bool moreSpeed = false;
+	public static bool makeClone = false;
 
 	public static bool GameOver = false;
 

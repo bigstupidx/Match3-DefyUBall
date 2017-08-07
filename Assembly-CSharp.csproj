@@ -52,16 +52,22 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Game\Ball.cs" />
+     <Compile Include="Assets\Scripts\Game\Ball2.cs" />
      <Compile Include="Assets\Scripts\Game\BMEnu.cs" />
-     <Compile Include="Assets\Scripts\Game\ChangeSprite.cs" />
+     <Compile Include="Assets\Scripts\Game\Bottle.cs" />
+     <Compile Include="Assets\Scripts\Game\CloneBall.cs" />
+     <Compile Include="Assets\Scripts\Game\Cookie.cs" />
      <Compile Include="Assets\Scripts\Game\DestroyDouble.cs" />
      <Compile Include="Assets\Scripts\Game\Double.cs" />
      <Compile Include="Assets\Scripts\Game\DoubleTimer.cs" />
      <Compile Include="Assets\Scripts\Game\GameOVer.cs" />
+     <Compile Include="Assets\Scripts\Game\PBottle.cs" />
+     <Compile Include="Assets\Scripts\Game\PCookie.cs" />
      <Compile Include="Assets\Scripts\Game\PDOUBLE.cs" />
      <Compile Include="Assets\Scripts\Game\Player.cs" />
      <Compile Include="Assets\Scripts\Game\PowerUpsM.cs" />
      <Compile Include="Assets\Scripts\Game\Score.cs" />
+     <Compile Include="Assets\Scripts\Game\SpeedTimer.cs" />
      <Compile Include="Assets\Scripts\GameLogic.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeSkin.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeSkinP.cs" />

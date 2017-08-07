@@ -14,29 +14,56 @@ public class Ball : MonoBehaviour {
 	private bool onTouch = false;
 	// Use this for initialization
 
+	private float next;
+	private float espera;
 
+	private float playerx;
+	private GameObject pjx;
+	private float currentpos;
+
+	public float radius;
 
 	void Start () {
 		//Bounce Force
-		bounce = 2100.0f;
+		bounce = 2500.0f;
+		bounce2 = 500.0f;
 
+		radius = 10.0f;
 
+		espera = 0.2f;
+		pjx = (GameObject)GameObject.FindGameObjectWithTag ("Player");
+
+		playerx = pjx.gameObject.transform.position.x;
 		}
 
 	
 	// Update is called once per frame
 	void Update () {
 
+		currentpos = this.gameObject.transform.position.x;
 		//Random Direction bounce2
-		bounce2 = Random.Range (-800,800);
+		//bounce2 = Random.Range (-800,800);
 
 		//Debug.Log (onTouch);
 		//Debug.Log (bounce2);
 
+
+
 		//if==true add force
 		if (onTouch == true) 
 		{
-			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (bounce2, bounce));
+			if (Time.time > next)
+			{
+				if (this.gameObject.transform.position.x > pjx.gameObject.transform.position.x) {
+					
+					this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (bounce2, bounce));
+					next = Time.time + espera;
+				}
+				if (this.gameObject.transform.position.x < pjx.gameObject.transform.position.x) {
+					this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (-bounce2, bounce));
+					next = Time.time + espera;
+				}
+			}
 		}
 		
 	}

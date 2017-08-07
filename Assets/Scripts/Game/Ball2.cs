@@ -1,0 +1,98 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Ball2 : MonoBehaviour {
+
+	//Variable Rebote(bounce)
+	public float bounce;
+	private float bounce2;
+
+	//variable Collision
+	private bool onTouch = false;
+	// Use this for initialization
+
+	private float next;
+	private float espera;
+
+	private float playerx;
+	private GameObject pjx;
+
+	void Start () {
+		//Bounce Force
+		bounce = 4000.0f;
+
+		espera = 0.2f;
+
+		pjx = (GameObject)GameObject.FindGameObjectWithTag ("Player");
+		playerx = pjx.gameObject.transform.position.x;
+	}
+
+
+	// Update is called once per frame
+	void Update () {
+
+		//Random Direction bounce2
+		bounce2 = Random.Range (-800,800);
+
+		//Debug.Log (onTouch);
+		//Debug.Log (bounce2);
+
+		//if==true add force
+		if (onTouch == true) 
+		{
+			if (Time.time > next)
+			{
+				if (this.gameObject.transform.position.x > pjx.gameObject.transform.position.x) {
+
+					this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (bounce2, bounce));
+					next = Time.time + espera;
+				}
+				if (this.gameObject.transform.position.x < pjx.gameObject.transform.position.x) {
+					this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (-bounce2, bounce));
+					next = Time.time + espera;
+				}
+			}
+		}
+
+	}
+
+	//function Rebote
+	void OnCollisionEnter(Collision collision)
+	{
+
+		if (collision.gameObject.tag == "Player") {
+			if (GameLogic.DoubleP == false) {
+				GameLogic.Points = GameLogic.Points + 1;
+			} else if (GameLogic.DoubleP == true) {
+				GameLogic.Points = GameLogic.Points + 2;
+			}
+
+			//Debug.Log ("touch");
+			onTouch = true;
+		}
+
+		if (collision.gameObject.tag == "limitL") 
+		{
+			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (1500.0f, 0.0f));
+		}
+		if (collision.gameObject.tag == "limitR") 
+		{
+			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (-1500.0f, 0.0f));
+		}
+		if (collision.gameObject.tag == "GameOver") {
+			Destroy (this.gameObject);
+		}
+
+
+	}
+	void OnCollisionExit(Collision collision)
+	{
+
+		if (collision.gameObject.tag == "Player") {
+
+			onTouch = false;
+		}
+
+	}
+}

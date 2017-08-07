@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 	public static float speed;
 	// Use this for initialization
 	void Start () {
-		speed = 30.0f;
+		
 		
 	}
 	
@@ -23,7 +23,12 @@ public class Player : MonoBehaviour {
 		{
 			this.gameObject.transform.Translate (Vector2.left * speed * Time.deltaTime);
 		}
-		
+
+		if (GameLogic.moreSpeed ==true) {
+			speed = 60.0f;
+		} else if((GameLogic.moreSpeed == false)&&(GameLogic.GameOver == false)) {
+			speed = 30.0f;
+		}
 	}
 
 	void FixedUpdate ()
