@@ -8,6 +8,9 @@ public class Ball2 : MonoBehaviour {
 	public float bounce;
 	private float bounce2;
 
+	private float wbounce;
+	private float wbounce2;
+
 	//variable Collision
 	private bool onTouch = false;
 	// Use this for initialization
@@ -17,10 +20,14 @@ public class Ball2 : MonoBehaviour {
 
 	private float playerx;
 	private GameObject pjx;
+	private float currentpos;
 
 	void Start () {
 		//Bounce Force
-		bounce = 4000.0f;
+		bounce = 6000.0f;
+		bounce2 = 1500.0f;
+
+		wbounce = 1600.0f;
 
 		espera = 0.2f;
 
@@ -32,8 +39,9 @@ public class Ball2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		currentpos = this.gameObject.transform.position.x;
 		//Random Direction bounce2
-		bounce2 = Random.Range (-800,800);
+		wbounce2 = Random.Range (-800,800);
 
 		//Debug.Log (onTouch);
 		//Debug.Log (bounce2);
@@ -74,12 +82,13 @@ public class Ball2 : MonoBehaviour {
 
 		if (collision.gameObject.tag == "limitL") 
 		{
-			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (1500.0f, 0.0f));
+			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (wbounce +wbounce2, 0.0f));
 		}
 		if (collision.gameObject.tag == "limitR") 
 		{
-			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (-1500.0f, 0.0f));
+			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (-wbounce-wbounce2, 0.0f));
 		}
+
 		if (collision.gameObject.tag == "GameOver") {
 			Destroy (this.gameObject);
 		}

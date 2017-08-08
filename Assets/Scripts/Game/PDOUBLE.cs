@@ -24,23 +24,43 @@ public class PDOUBLE : MonoBehaviour {
 
 		fuerza = 1.0f;
 		tiempobala = 30.0f;
-		espera = 12.0f;
+		espera = 10.0f;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if ((GameLogic.Points == 10) || (GameLogic.Points == 22) ){
+		if ((GameLogic.Points == 10) ){
+			
+			dup = true;
+		}
+		if(dup == true)
+		{
 			if (Time.time > next) {
 				copia = (GameObject)Instantiate (bala, vacio.transform.position, bala.transform.rotation);
 				//copia.transform.localScale = new Vector3 (21.0f,21.0f,21.0f);
 				//copia.gameObject.GetComponent<Rigidbody>().velocity = -canyon.transform.up * fuerza;
 				Destroy (copia.gameObject, tiempobala);
 				next = Time.time + espera;
-
 			}
-			
+		}
+		if ((GameLogic.Points == 20) ){
+
+			espera = 8.0f;
+		}
+		if ((GameLogic.Points == 30) ){
+
+			espera = 7.0f;
+		}
+		if ((GameLogic.Points == 40) ){
+
+			espera = 6.0f;
+		}
+
+		if ((GameLogic.Points == 50) ){
+
+			espera = 5.0f;
 		}
 	
 

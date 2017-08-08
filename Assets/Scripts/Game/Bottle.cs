@@ -8,7 +8,7 @@ public class Bottle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		turnspeed = 85.0f;
+		turnspeed = 120.0f;
 	}
 
 	// Update is called once per frame
@@ -19,9 +19,12 @@ public class Bottle : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collision)
 	{
-		if (collision.gameObject.tag == "GameOver" || collision.gameObject.tag == "Respawn" || collision.gameObject.tag == "Respawn")  {
+		if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Respawn")  {
 
 			GameLogic.moreSpeed = true;
+			Destroy (this.gameObject);
+		}
+		if (collision.gameObject.tag == "GameOver") {
 			Destroy (this.gameObject);
 		}
 	}

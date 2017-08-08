@@ -22,25 +22,35 @@ public class PCookie : MonoBehaviour {
 
 
 		tiempobala = 30.0f;
-		espera = 25.0f;
+		espera = 10.0f;
 
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		if ((GameLogic.Points == 30) || (GameLogic.Points == 30)){
+		if (GameLogic.Points == 30)
+		{
+			dup = true;
+
+		}
+		if (dup == true) {
 			if (Time.time > next) {
 				copia = (GameObject)Instantiate (bala, vacio.transform.position, bala.transform.rotation);
-
 				Destroy (copia.gameObject, tiempobala);
 				next = Time.time + espera;
 
 			}
+		}
+		if (GameLogic.Points == 30)
+		{
+			espera = 5.0f;
+
+		}
 
 		}
 
 
 
 	}
-}
+

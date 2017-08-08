@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class GameOVer : MonoBehaviour {
 
 	private GameObject menu;
-	private Text restart;
+	private GameObject restart;
 	// Use this for initialization
 	void Start () {
-		restart = GetComponent<Text>();
-		restart.text = "";
-
+		
+		restart = (GameObject)GameObject.FindGameObjectWithTag ("Replay");
 		menu = (GameObject)GameObject.FindGameObjectWithTag ("Menub");
 
 		menu.gameObject.SetActive (false);
+		restart.gameObject.SetActive (false);
 		
 	}
 	
@@ -22,8 +22,9 @@ public class GameOVer : MonoBehaviour {
 	void Update () {
 
 		if (GameLogic.GameOver == true) {
-			restart.text = "TAP TO RESTART";
+			
 			menu.gameObject.SetActive (true);
+			restart.gameObject.SetActive (true);
 
 
 			if (Input.GetMouseButtonDown (0)) {

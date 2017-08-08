@@ -16,6 +16,12 @@ TagManager:
   - Menub
   - cookie
   - bottle
+  - yellow
+  - red
+  - hit
+  - Replay
+  - bottleC
+  - bottleui
   layers:
   - Default
   - TransparentFX

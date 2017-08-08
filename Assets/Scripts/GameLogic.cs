@@ -15,6 +15,10 @@ public class GameLogic : MonoBehaviour {
 	public static bool DoubleP = false;
 	public static bool moreSpeed = false;
 	public static bool makeClone = false;
+	public static bool makeBig = false;
+	public static bool showBig = false;
+
+	public static bool Stun = false;
 
 	public static bool GameOver = false;
 
@@ -23,14 +27,18 @@ public class GameLogic : MonoBehaviour {
 
 	private GameObject lights;
 
+	private float countdown = 3.0f;
+
 	//public GameObject PointsText;
 	//public Text PointsText;
 
 	// Use this for initialization
 	void Start () {
-		Screen.SetResolution (Screen.currentResolution.width, Screen.currentResolution.height, true);
+		//Screen.SetResolution (Screen.currentResolution.width, Screen.currentResolution.height, true);
 
-		gravy = -50.0f;
+
+
+		gravy = -200.0f;
 		//PointsText = GetComponent<Text>();
 		//PointsText.text = "hola";
 
@@ -43,8 +51,7 @@ public class GameLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-
+	
 		//Gravedad
 		Physics.gravity = new Vector3 (0.0f, gravy, 0.0f);
 
