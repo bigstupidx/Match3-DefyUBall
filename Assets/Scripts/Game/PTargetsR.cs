@@ -39,7 +39,9 @@ public class PTargetsR : MonoBehaviour {
 
 		if (GameLogic.Points == 50)
 		{
-			dup = true;
+			if (GameLogic.GameOver == false) {
+				dup = true;
+			}
 
 		}
 		if (dup == true) {
@@ -50,6 +52,10 @@ public class PTargetsR : MonoBehaviour {
 
 			}
 
+		}
+		if (GameLogic.GameOver == true) 
+		{
+			dup = false;
 		}
 
 	}

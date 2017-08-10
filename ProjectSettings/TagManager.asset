@@ -22,6 +22,12 @@ TagManager:
   - Replay
   - bottleC
   - bottleui
+  - dark
+  - watch
+  - Ball2
+  - x2Show
+  - isAbove
+  - arrowup
   layers:
   - Default
   - TransparentFX

@@ -62,6 +62,10 @@ public class PDOUBLE : MonoBehaviour {
 
 			espera = 5.0f;
 		}
+		if (GameLogic.GameOver == true) 
+		{
+			dup = false;
+		}
 	
 
 

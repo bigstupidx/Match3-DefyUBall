@@ -7,12 +7,11 @@ public class SpeedTimer : MonoBehaviour {
 
 	private float timeLeft;
 
-	private Text timer;
+
 	// Use this for initialization
 	void Start () 
 	{
-		timer = GetComponent<Text>();
-		timer.text = "";
+		
 		timeLeft = 5.0f;
 
 	}
@@ -25,11 +24,10 @@ public class SpeedTimer : MonoBehaviour {
 		if(GameLogic.moreSpeed == true)
 		{
 			timeLeft -= Time.deltaTime;
-			timer.text = "X2 Speed: " + timeLeft.ToString ("N0");
+
 			if (timeLeft < 0) 
 			{
 				GameLogic.moreSpeed = false;
-				timer.text = "";
 				timeLeft = 5.0f;
 			}
 		}

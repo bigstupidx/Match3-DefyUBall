@@ -7,16 +7,17 @@ public class DoubleTimer : MonoBehaviour {
 
 	private float timeLeft;
 
-	private Text timer;
+	private GameObject showx2;
+
 	// Use this for initialization
 	void Start () 
 	{
-		timer = GetComponent<Text>();
-		timer.text = "";
 		timeLeft = 5.0f;
+		showx2 =  (GameObject)GameObject.FindGameObjectWithTag ("x2Show");
+		showx2.gameObject.SetActive (false);
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -25,12 +26,12 @@ public class DoubleTimer : MonoBehaviour {
 		if(GameLogic.DoubleP == true)
 		{
 		timeLeft -= Time.deltaTime;
-			timer.text = "X2 Score: " + timeLeft.ToString ("N0");
+			showx2.gameObject.SetActive (true);
 			if (timeLeft < 0) 
 			{
 				GameLogic.DoubleP = false;
-				timer.text = "";
 				timeLeft = 5.0f;
+				showx2.gameObject.SetActive (false);
 			}
 		}
 		

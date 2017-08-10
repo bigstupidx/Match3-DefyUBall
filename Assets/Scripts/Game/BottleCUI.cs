@@ -18,7 +18,7 @@ public class BottleCUI : MonoBehaviour {
 	}
 	void OnMouseDown()
 	{
-		GameLogic.makeBig == true;
-		GameLogic.showBig == false;
+		GameLogic.makeBig = true;
+		GameLogic.showBig = false;
 	}
 }

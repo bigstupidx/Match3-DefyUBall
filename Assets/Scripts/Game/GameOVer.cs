@@ -25,18 +25,16 @@ public class GameOVer : MonoBehaviour {
 			
 			menu.gameObject.SetActive (true);
 			restart.gameObject.SetActive (true);
+			GameLogic.makeBig = false;
+			GameLogic.showBig = false;
+			GameLogic.showWatch = false;
+			GameLogic.DoubleP = false;
+			GameLogic.moreSpeed = false;
+			GameLogic.makeClone = false;
+			GameLogic.slowMo = false;
+			GameLogic.stopShowWatch = false;
 
 
-			if (Input.GetMouseButtonDown (0)) {
-				GameLogic.Points = 0;
-				GameLogic.GameOver = false;
-				Application.LoadLevel (1);
-			}
-			else if (Input.touchCount > 0) {
-				GameLogic.Points = 0;
-				GameLogic.GameOver = false;
-				Application.LoadLevel (1);
-			}
 		}
 	}
 }

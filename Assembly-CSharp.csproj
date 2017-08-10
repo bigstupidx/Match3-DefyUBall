@@ -57,12 +57,14 @@
      <Compile Include="Assets\Scripts\Game\Bottle.cs" />
      <Compile Include="Assets\Scripts\Game\BottleC.cs" />
      <Compile Include="Assets\Scripts\Game\BottleCUI.cs" />
+     <Compile Include="Assets\Scripts\Game\BottleCUIShake.cs" />
      <Compile Include="Assets\Scripts\Game\CloneBall.cs" />
      <Compile Include="Assets\Scripts\Game\Cookie.cs" />
      <Compile Include="Assets\Scripts\Game\DestroyDouble.cs" />
      <Compile Include="Assets\Scripts\Game\Double.cs" />
      <Compile Include="Assets\Scripts\Game\DoubleTimer.cs" />
      <Compile Include="Assets\Scripts\Game\GameOVer.cs" />
+     <Compile Include="Assets\Scripts\Game\isAbove.cs" />
      <Compile Include="Assets\Scripts\Game\PBottle.cs" />
      <Compile Include="Assets\Scripts\Game\PBottleC.cs" />
      <Compile Include="Assets\Scripts\Game\PCookie.cs" />
@@ -72,9 +74,12 @@
      <Compile Include="Assets\Scripts\Game\PTargets.cs" />
      <Compile Include="Assets\Scripts\Game\PTargetsR.cs" />
      <Compile Include="Assets\Scripts\Game\Red.cs" />
+     <Compile Include="Assets\Scripts\Game\Restart.cs" />
+     <Compile Include="Assets\Scripts\Game\RotateBall.cs" />
      <Compile Include="Assets\Scripts\Game\Score.cs" />
      <Compile Include="Assets\Scripts\Game\Shoe.cs" />
      <Compile Include="Assets\Scripts\Game\SpeedTimer.cs" />
+     <Compile Include="Assets\Scripts\Game\Watch.cs" />
      <Compile Include="Assets\Scripts\Game\Yellow.cs" />
      <Compile Include="Assets\Scripts\GameLogic.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeSkin.cs" />

@@ -30,8 +30,9 @@ public class PBottle : MonoBehaviour {
 
 		if ((GameLogic.Points == 25))
 		{
-			dup = true;		
-
+			if (GameLogic.GameOver == false) {
+				dup = true;		
+			}
 		}
 		if (dup == true) {
 			if (Time.time > next) {
@@ -45,6 +46,10 @@ public class PBottle : MonoBehaviour {
 		{
 			espera = 5.0f;		
 
+		}
+		if (GameLogic.GameOver == true) 
+		{
+			dup = false;
 		}
 
 

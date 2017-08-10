@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
 	private bool cantgoL = false;
 
 	private float dtime;
+	private float bigtime;
 
 	private GameObject hit;
 
@@ -20,11 +21,26 @@ public class Player : MonoBehaviour {
 		//hit.gameObject.SetActive (false);
 
 		dtime = 0.3f;
+
 		
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		if (GameLogic.makeBig == false)
+		{
+			this.gameObject.transform.localScale = new Vector3 (30.0f,30.0f,30.0f);
+		}
+		if (GameLogic.makeBig == true) 
+		{
+			bigtime += Time.deltaTime;
+			this.gameObject.transform.localScale = new Vector3 (45.0f,45.0f,45.0f);
+			if (bigtime > 8.0f) {
+				GameLogic.makeBig = false;
+				bigtime = 0.0f;
+			}
+		}
 
 		//hit yellow
 		if (GameLogic.Stun == true) 

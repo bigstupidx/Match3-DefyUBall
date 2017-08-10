@@ -12,7 +12,9 @@ public class Ball2 : MonoBehaviour {
 	private float wbounce2;
 
 	//variable Collision
-	private bool onTouch = false;
+	public static bool onTouch = false;
+	public static bool firstTouch = false;
+	public static bool canRotate = false;
 	// Use this for initialization
 
 	private float next;
@@ -22,16 +24,19 @@ public class Ball2 : MonoBehaviour {
 	private GameObject pjx;
 	private float currentpos;
 
+
 	void Start () {
 		//Bounce Force
-		bounce = 6000.0f;
+		bounce = 5000.0f;
 		bounce2 = 1500.0f;
 
 		wbounce = 1600.0f;
 
-		espera = 0.2f;
 
+
+		espera = 0.2f;
 		pjx = (GameObject)GameObject.FindGameObjectWithTag ("Player");
+
 		playerx = pjx.gameObject.transform.position.x;
 	}
 
@@ -45,6 +50,8 @@ public class Ball2 : MonoBehaviour {
 
 		//Debug.Log (onTouch);
 		//Debug.Log (bounce2);
+
+
 
 		//if==true add force
 		if (onTouch == true) 
@@ -70,6 +77,8 @@ public class Ball2 : MonoBehaviour {
 	{
 
 		if (collision.gameObject.tag == "Player") {
+			firstTouch = true;
+			canRotate = true;
 			if (GameLogic.DoubleP == false) {
 				GameLogic.Points = GameLogic.Points + 1;
 			} else if (GameLogic.DoubleP == true) {
@@ -89,11 +98,10 @@ public class Ball2 : MonoBehaviour {
 			this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (-wbounce-wbounce2, 0.0f));
 		}
 
-		if (collision.gameObject.tag == "GameOver") {
+		if (collision.gameObject.tag == "GameOver") 
+		{
 			Destroy (this.gameObject);
 		}
-
-
 	}
 	void OnCollisionExit(Collision collision)
 	{
@@ -101,6 +109,7 @@ public class Ball2 : MonoBehaviour {
 		if (collision.gameObject.tag == "Player") {
 
 			onTouch = false;
+			canRotate = false;
 		}
 
 	}

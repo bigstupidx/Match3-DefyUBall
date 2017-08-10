@@ -1,27 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu\Playbutt.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\Restart.cs">
     <Files>
-      <File FileName="..\..\..\Downloads\MadHerov1.4\MadHerov1.4\MadHero\Assets\Scripts\Disparar.cs" Line="71" Column="1" />
-      <File FileName="Assets\Scripts\GameLogic.cs" Line="19" Column="28" />
-      <File FileName="Assets\Scripts\Game\GameOVer.cs" Line="36" Column="26" />
-      <File FileName="Assets\Scripts\Game\SpeedTimer.cs" Line="34" Column="5" />
-      <File FileName="Assets\Scripts\Game\Ball.cs" Line="39" Column="65" />
-      <File FileName="Assets\Scripts\Game\Ball2.cs" Line="88" Column="4" />
-      <File FileName="Assets\Scripts\Game\DestroyDouble.cs" Line="12" Column="3" />
-      <File FileName="Assets\Scripts\Game\Cookie.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game\Player.cs" Line="32" Column="6" />
-      <File FileName="Assets\Scripts\Game\Yellow.cs" Line="19" Column="6" />
-      <File FileName="Assets\Scripts\Game\Double.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game\Bottle.cs" Line="32" Column="1" />
-      <File FileName="Assets\Scripts\Game\CloneBall.cs" Line="36" Column="111" />
-      <File FileName="Assets\Scripts\Game\PTargets.cs" Line="52" Column="31" />
-      <File FileName="Assets\Scripts\Game\PTargetsR.cs" Line="40" Column="30" />
-      <File FileName="Assets\Scripts\Game\PCookie.cs" Line="30" Column="18" />
-      <File FileName="Assets\Scripts\Game\BottleC.cs" Line="6" Column="26" />
-      <File FileName="Assets\Scripts\Game\PBottleC.cs" Line="36" Column="3" />
-      <File FileName="Assets\Scripts\Game\BottleCUI.cs" Line="22" Column="30" />
-      <File FileName="Assets\Scripts\Menu\Playbutt.cs" Line="13" Column="18" />
+      <File FileName="Assets\Scripts\Game\PBottleC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\BottleC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\DoubleTimer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\SpeedTimer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\Watch.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\GameOVer.cs" Line="37" Column="4" />
+      <File FileName="Assets\Scripts\Game\PTargets.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\PTargetsR.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\CloneBall.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\isAbove.cs" Line="20" Column="18" />
+      <File FileName="Assets\Scripts\Game\Restart.cs" Line="19" Column="29" />
+      <File FileName="Assets\Scripts\Menu\LeftArrow.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

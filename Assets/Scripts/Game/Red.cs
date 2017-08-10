@@ -13,4 +13,10 @@ public class Red : MonoBehaviour {
 	void Update () {
 		
 	}
+	void OnTriggerEnter(Collider collision)
+	{
+		if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Respawn")  {
+			GameLogic.GameOver = true;
+		}
+	}
 }

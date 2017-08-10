@@ -32,14 +32,23 @@ public class PBottleC : MonoBehaviour {
 
 		if (GameLogic.showBig == true) {
 			bottlecui.gameObject.SetActive (true);
+		} else {
+			bottlecui.gameObject.SetActive (false);
 		}
 
 
-		if (GameLogic.Points == 2/*18*/ && GameLogic.showBig == false)
+		if (GameLogic.Points == 18)
 		{
-			dup = true;
+			if (GameLogic.GameOver == false) {
+				dup = true;		
+			}
+
 
 		}
+		if (GameLogic.showBig == true) {
+			dup = false;
+		}
+
 		if (dup == true) {
 			if (Time.time > next) {
 				copia = (GameObject)Instantiate (bala, vacio.transform.position, bala.transform.rotation);				
@@ -47,6 +56,10 @@ public class PBottleC : MonoBehaviour {
 				next = Time.time + espera;
 
 			}
+		}
+		if (GameLogic.GameOver == true) 
+		{
+			dup = false;
 		}
 	}
 }

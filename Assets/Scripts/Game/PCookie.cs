@@ -31,7 +31,9 @@ public class PCookie : MonoBehaviour {
 
 		if (GameLogic.Points == 30)
 		{
-			dup = true;
+			if (GameLogic.GameOver == false) {
+				dup = true;		
+			}
 
 		}
 		if (dup == true) {
@@ -46,6 +48,10 @@ public class PCookie : MonoBehaviour {
 		{
 			espera = 5.0f;
 
+		}
+		if (GameLogic.GameOver == true) 
+		{
+			dup = false;
 		}
 
 		}

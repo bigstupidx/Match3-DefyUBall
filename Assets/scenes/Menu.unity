@@ -336,6 +336,8 @@ MonoBehaviour:
   defaultSprite: {fileID: 21300000, guid: 2cbbccfe4c1ff414c9aa129402078f0d, type: 3}
   redSprite: {fileID: 21300000, guid: bd25929538cd093489ccf946c85701c5, type: 3}
   greenSprite: {fileID: 21300000, guid: d05ae27034b030b47b3a85ee2ea71c81, type: 3}
+  messi: {fileID: 21300000, guid: 68788fb9944675849a9fa9ca26378a0e, type: 3}
+  ronaldo: {fileID: 21300000, guid: 2efb09afb592eef4989b3cbe0e558ab3, type: 3}
 --- !u!65 &485276846
 BoxCollider:
   m_ObjectHideFlags: 0

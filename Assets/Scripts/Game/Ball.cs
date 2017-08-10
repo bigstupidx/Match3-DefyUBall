@@ -14,7 +14,9 @@ public class Ball : MonoBehaviour {
 	private float wbounce2;
 
 	//variable Collision
-	private bool onTouch = false;
+	public static bool onTouch = false;
+	public static bool firstTouch = false;
+	public static bool canRotate = false;
 	// Use this for initialization
 
 	private float next;
@@ -24,7 +26,6 @@ public class Ball : MonoBehaviour {
 	private GameObject pjx;
 	private float currentpos;
 
-	public float radius;
 
 	void Start () {
 		//Bounce Force
@@ -52,7 +53,7 @@ public class Ball : MonoBehaviour {
 		//Debug.Log (onTouch);
 		//Debug.Log (bounce2);
 
-
+	
 
 		//if==true add force
 		if (onTouch == true) 
@@ -78,6 +79,8 @@ public class Ball : MonoBehaviour {
 	{
 
 		if (collision.gameObject.tag == "Player") {
+			firstTouch = true;
+			canRotate = true;
 			if (GameLogic.DoubleP == false) {
 				GameLogic.Points = GameLogic.Points + 1;
 			} else if (GameLogic.DoubleP == true) {
@@ -103,12 +106,13 @@ public class Ball : MonoBehaviour {
 			Player.speed = 0.0f;
 		}
 	}
-	void OnCollisionExit(Collision collision)
+void OnCollisionExit(Collision collision)
 	{
 
 		if (collision.gameObject.tag == "Player") {
 			
 			onTouch = false;
+			canRotate = false;
 		}
 
 	}
