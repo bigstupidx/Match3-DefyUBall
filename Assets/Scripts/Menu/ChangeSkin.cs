@@ -23,24 +23,24 @@ public class ChangeSkin : MonoBehaviour {
 	{
 			
 
-			if (GameLogic.pSkinBall > 2) {
-				GameLogic.pSkinBall = 0;
+		if (Skins.pSkinBall > 2) {
+			Skins.pSkinBall = 0;
 			}
-			if (GameLogic.pSkinBall < 0) {
-				GameLogic.pSkinBall = 2;
+		if (Skins.pSkinBall < 0) {
+			Skins.pSkinBall = 2;
 			}
 
 
-			if (GameLogic.pSkinBall == 0) {
+		if (Skins.pSkinBall == 0) {
 				this.GetComponent<SpriteRenderer> ().sprite = defaultSprite;
 
 			}
 
-			if (GameLogic.pSkinBall == 1) {
+		if (Skins.pSkinBall == 1) {
 				this.GetComponent<SpriteRenderer> ().sprite = redSprite;
 
 			}
-			if (GameLogic.pSkinBall == 2) {
+		if (Skins.pSkinBall == 2) {
 				this.GetComponent<SpriteRenderer> ().sprite = greenSprite;
 
 			}

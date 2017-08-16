@@ -21,7 +21,7 @@ public class PBottle : MonoBehaviour {
 	void Start () {
 
 		tiempobala = 30.0f;
-		espera = 15.0f;
+		espera = 8.0f;
 
 	}
 

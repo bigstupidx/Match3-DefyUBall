@@ -18,6 +18,7 @@ public class BMEnu : MonoBehaviour {
 	void OnMouseDown()
 	{
 		GameLogic.GameOver = false;
+		GameLogic.Points = 0;
 		Application.LoadLevel (0);
 
 

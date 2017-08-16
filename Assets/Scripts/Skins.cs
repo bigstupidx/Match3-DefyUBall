@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Watch : MonoBehaviour {
+public class Skins : MonoBehaviour {
 
 
+	public static int pSkinBall = 0;
+	public static int pSkinPlayer = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -14,14 +16,5 @@ public class Watch : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-	void OnMouseDown()
-	{
-		GameLogic.slowMo = true;
-
-		GameLogic.showWatch = false;
-		GameLogic.stopShowWatch = true;
-
 	}
 }

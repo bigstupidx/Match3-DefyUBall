@@ -32,7 +32,7 @@ public class RightArrow : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		GameLogic.pSkinBall += 1;
+		Skins.pSkinBall += 1;
 
 
 	}

@@ -28,6 +28,10 @@ TagManager:
   - x2Show
   - isAbove
   - arrowup
+  - limitT
+  - arrow
+  - cube
+  - porteria
   layers:
   - Default
   - TransparentFX

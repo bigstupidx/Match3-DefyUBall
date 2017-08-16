@@ -51,6 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Arkbounce\ArrowAim.cs" />
+     <Compile Include="Assets\Scripts\Arkbounce\BallArk.cs" />
+     <Compile Include="Assets\Scripts\Arkbounce\PlayerArk.cs" />
+     <Compile Include="Assets\Scripts\Arkbounce\RestartArk.cs" />
      <Compile Include="Assets\Scripts\Game\Ball.cs" />
      <Compile Include="Assets\Scripts\Game\Ball2.cs" />
      <Compile Include="Assets\Scripts\Game\BMEnu.cs" />
@@ -84,11 +88,13 @@
      <Compile Include="Assets\Scripts\GameLogic.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeSkin.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeSkinP.cs" />
+     <Compile Include="Assets\Scripts\Menu\GoArk.cs" />
      <Compile Include="Assets\Scripts\Menu\LeftArrow.cs" />
      <Compile Include="Assets\Scripts\Menu\LeftArrowP.cs" />
      <Compile Include="Assets\Scripts\Menu\Playbutt.cs" />
      <Compile Include="Assets\Scripts\Menu\RightArrow.cs" />
      <Compile Include="Assets\Scripts\Menu\RightArrowP.cs" />
+     <Compile Include="Assets\Scripts\Skins.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -15,9 +15,7 @@ public class PTargetsR : MonoBehaviour {
 
 	private bool dup = false;
 
-	private float puntoInicialX;
-	private float pong;
-	private float speed = 100.0f;
+
 
 	// Use this for initialization
 	void Start ()
@@ -25,19 +23,16 @@ public class PTargetsR : MonoBehaviour {
 
 
 
-		espera = 8.0f;
+		espera = 10.0f;
 
-		puntoInicialX = this.transform.position.x;
+
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
-		pong = Mathf.PingPong (Time.time * speed, 85);
 
-		this.gameObject.transform.position = new Vector3 (pong + puntoInicialX, transform.position.y, transform.position.z);
-
-		if (GameLogic.Points == 50)
+		if (GameLogic.Points == 45)
 		{
 			if (GameLogic.GameOver == false) {
 				dup = true;

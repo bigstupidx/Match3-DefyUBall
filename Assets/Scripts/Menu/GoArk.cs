@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Watch : MonoBehaviour {
-
-
+public class GoArk : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +16,7 @@ public class Watch : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		GameLogic.slowMo = true;
-
-		GameLogic.showWatch = false;
-		GameLogic.stopShowWatch = true;
+		Application.LoadLevel(2);
 
 	}
 }

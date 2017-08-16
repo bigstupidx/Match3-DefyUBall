@@ -51,16 +51,16 @@ public class PDOUBLE : MonoBehaviour {
 		}
 		if ((GameLogic.Points == 30) ){
 
-			espera = 7.0f;
+			espera = 5.0f;
 		}
 		if ((GameLogic.Points == 40) ){
 
-			espera = 6.0f;
+			espera = 4.0f;
 		}
 
 		if ((GameLogic.Points == 50) ){
 
-			espera = 5.0f;
+			espera = 3.0f;
 		}
 		if (GameLogic.GameOver == true) 
 		{

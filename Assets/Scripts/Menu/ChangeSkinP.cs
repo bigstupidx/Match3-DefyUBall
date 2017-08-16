@@ -24,31 +24,31 @@ public class ChangeSkinP : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (GameLogic.pSkinPlayer > maxskin) {
-			GameLogic.pSkinPlayer = 0;
+		if (Skins.pSkinPlayer > maxskin) {
+			Skins.pSkinPlayer = 0;
 		}
-		if (GameLogic.pSkinPlayer < 0) {
-			GameLogic.pSkinPlayer = maxskin;
+		if (Skins.pSkinPlayer < 0) {
+			Skins.pSkinPlayer = maxskin;
 		}
 
-		if (GameLogic.pSkinPlayer == 0) {
+		if (Skins.pSkinPlayer == 0) {
 			this.GetComponent<SpriteRenderer> ().sprite = defaultSprite;
 
 		}
 
-		if (GameLogic.pSkinPlayer == 1) {
+		if (Skins.pSkinPlayer == 1) {
 			this.GetComponent<SpriteRenderer> ().sprite = redSprite;
 
 		}
-		if (GameLogic.pSkinPlayer == 2) {
+		if (Skins.pSkinPlayer == 2) {
 			this.GetComponent<SpriteRenderer> ().sprite = greenSprite;
 
 		}
-		if (GameLogic.pSkinPlayer == 3) {
+		if (Skins.pSkinPlayer == 3) {
 			this.GetComponent<SpriteRenderer> ().sprite = messi;
 
 		}
-		if (GameLogic.pSkinPlayer == 4) {
+		if (Skins.pSkinPlayer == 4) {
 			this.GetComponent<SpriteRenderer> ().sprite = ronaldo;
 
 		}

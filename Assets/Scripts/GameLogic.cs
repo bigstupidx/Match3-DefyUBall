@@ -33,8 +33,8 @@ public class GameLogic : MonoBehaviour {
 
 	public static bool GameOver = false;
 
-	public static int pSkinBall = 0;
-	public static int pSkinPlayer = 0;
+	/*public static int pSkinBall = 0;
+	public static int pSkinPlayer = 0;*/
 
 	private GameObject lights;
 

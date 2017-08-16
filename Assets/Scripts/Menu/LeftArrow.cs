@@ -31,7 +31,7 @@ public class LeftArrow : MonoBehaviour {
 	}
 	void OnMouseDown()
 	{
-		GameLogic.pSkinBall -= 1;
+		Skins.pSkinBall -= 1;
 
 
 	}

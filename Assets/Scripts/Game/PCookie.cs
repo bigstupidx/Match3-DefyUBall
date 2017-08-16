@@ -22,7 +22,7 @@ public class PCookie : MonoBehaviour {
 
 
 		tiempobala = 30.0f;
-		espera = 10.0f;
+		espera = 8.0f;
 
 	}
 

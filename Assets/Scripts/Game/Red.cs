@@ -17,6 +17,7 @@ public class Red : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Respawn")  {
 			GameLogic.GameOver = true;
+			Destroy (this.gameObject);
 		}
 	}
 }

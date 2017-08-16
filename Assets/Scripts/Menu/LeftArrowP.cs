@@ -29,7 +29,7 @@ public class LeftArrowP : MonoBehaviour {
 	}
 	void OnMouseDown()
 	{
-		GameLogic.pSkinPlayer -= 1;
+		Skins.pSkinPlayer -= 1;
 
 
 	}
