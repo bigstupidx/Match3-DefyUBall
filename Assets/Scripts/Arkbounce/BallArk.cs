@@ -9,6 +9,7 @@ public class BallArk : MonoBehaviour {
 
 	public GameObject menu;
 	public GameObject restart;
+	public GameObject nextL;
 
 	private GameObject pjx;
 	private GameObject porteria;
@@ -26,9 +27,15 @@ public class BallArk : MonoBehaviour {
 	private GameObject x2Void;
 	private float x2life;
 	private GameObject copy;
+	private GameObject copy2;
+
 	private float x2timer;
 
 	private float x2counter;
+
+	private GameObject particle;
+	private float particlelife = 0.40f;
+	private bool showPart = false;
 
 
 	Vector3 lastPosition = Vector3.zero;
@@ -41,18 +48,19 @@ public class BallArk : MonoBehaviour {
 		x2life = 1.0f;
 
 		pjx = (GameObject)GameObject.FindGameObjectWithTag ("Player");
-		playerx = pjx.gameObject.transform.position.x;
+
 
 		porteria = (GameObject)GameObject.FindGameObjectWithTag ("porteria");
 
 		x2boost = (GameObject)GameObject.FindGameObjectWithTag ("x2boost");
 		x2Void = (GameObject)GameObject.FindGameObjectWithTag ("x2void");
 		
+		particle = (GameObject)GameObject.FindGameObjectWithTag ("Particle");
 
+		particle.SetActive (false);
 
-
-		//menu.gameObject.SetActive (true);
 		restart.gameObject.SetActive (false);
+		nextL.gameObject.SetActive (false);
 
 		rigidbody = GetComponent<Rigidbody>();
 
@@ -61,7 +69,7 @@ public class BallArk : MonoBehaviour {
 	void FixedUpdate()
 	{
 		
-
+		bounceDirection ();
 		rigidbody.velocity = rigidbody.velocity.normalized * speed;
 
 	}
@@ -76,9 +84,7 @@ public class BallArk : MonoBehaviour {
 			gameObject.transform.transform.position = new Vector2 (transform.position.x, porteria.transform.position.y);
 		}
 
-
-
-		bounceDirection ();
+		showP ();
 
 	}
 
@@ -86,6 +92,7 @@ public class BallArk : MonoBehaviour {
 	void bounceDirection()
 	{
 		currentpos = transform.position.x;
+		playerx = pjx.gameObject.transform.position.x;
 		if (currentpos > playerx) 
 		{
 			bounceR = true;
@@ -108,13 +115,16 @@ public class BallArk : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody>().drag = 3.2f;
 		gameObject.GetComponent<Rigidbody>().angularDrag = 3.0f;
 		GoalKeeper.speedkeeper = 0.0f;
+		speed = 0.0f;
 	}
 	public void GameWin()
 	{
 		restart.gameObject.SetActive (true);
+		nextL.gameObject.SetActive (true);
 		gameObject.GetComponent<Rigidbody>().drag = 3.2f;
 		gameObject.GetComponent<Rigidbody>().angularDrag = 3.0f;
 		GoalKeeper.speedkeeper = 0.0f;
+		speed = 0.0f;
 
 	}
 	void ShowX2()
@@ -123,15 +133,33 @@ public class BallArk : MonoBehaviour {
 
 		Destroy (copy.gameObject, x2life);
 	}
+	void showP()
+	{
+		if (showPart) 
+		{
+			particle.SetActive(true);
+
+			particlelife -=Time.deltaTime;
+
+			if (particlelife < 0.0f) {
+				particle.SetActive (false);
+				showPart = false;
+				particlelife = 0.40f;
+			}
+		}
+
+	}
+
 	void OnCollisionEnter(Collision other)
 	{
 		
 		if (other.gameObject.tag == "Player" || other.gameObject.tag == "Respawn") 
 		{
+			var bouncinessX = Mathf.Abs (playerx - transform.position.x) * 8;
 			if(bounceL)
-				rigidbody.velocity = new Vector3 (-bounciness, bounciness);
+				rigidbody.velocity = new Vector3 (-bouncinessX, bounciness);
 			if(bounceR)
-				rigidbody.velocity = new Vector3 (bounciness, bounciness);
+				rigidbody.velocity = new Vector3 (bouncinessX, bounciness);
 			
 			x2counter = 0.0f;
 		
@@ -159,6 +187,10 @@ public class BallArk : MonoBehaviour {
 				ShowX2 ();
 				pjx.GetComponent<PlayerArk>().sumPoints();
 			}
+			showPart = true;
+
+
+			particle.gameObject.transform.position = new Vector3 (other.transform.position.x, other.transform.position.y, particle.transform.position.z);
 		}
 		if (other.gameObject.tag == "GameOver")
 		{

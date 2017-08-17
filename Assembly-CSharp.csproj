@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Arkbounce\ArrowAim.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\BallArk.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\GoalKeeper.cs" />
+     <Compile Include="Assets\Scripts\Arkbounce\NextLevel.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\PlayerArk.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\RestartArk.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\ShowScore.cs" />

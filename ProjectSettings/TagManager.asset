@@ -35,6 +35,8 @@ TagManager:
   - Palo
   - x2void
   - x2boost
+  - Particle
+  - nextL
   layers:
   - Default
   - TransparentFX

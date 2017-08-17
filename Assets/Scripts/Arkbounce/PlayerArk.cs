@@ -57,7 +57,7 @@ public class PlayerArk : MonoBehaviour {
 		{
 			firstTouch = true;
 		}*/
-		Debug.Log ("Score: " + score);
+
 
 	}
 	//score
