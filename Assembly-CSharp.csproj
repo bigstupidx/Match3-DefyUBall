@@ -53,8 +53,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Arkbounce\ArrowAim.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\BallArk.cs" />
+     <Compile Include="Assets\Scripts\Arkbounce\GoalKeeper.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\PlayerArk.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\RestartArk.cs" />
+     <Compile Include="Assets\Scripts\Arkbounce\ShowScore.cs" />
      <Compile Include="Assets\Scripts\Game\Ball.cs" />
      <Compile Include="Assets\Scripts\Game\Ball2.cs" />
      <Compile Include="Assets\Scripts\Game\BMEnu.cs" />
@@ -95,6 +97,7 @@
      <Compile Include="Assets\Scripts\Menu\RightArrow.cs" />
      <Compile Include="Assets\Scripts\Menu\RightArrowP.cs" />
      <Compile Include="Assets\Scripts\Skins.cs" />
+     <None Include="Assets\Sprites\X2.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

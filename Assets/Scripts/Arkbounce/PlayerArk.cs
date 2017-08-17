@@ -28,6 +28,8 @@ public class PlayerArk : MonoBehaviour {
 	private float playerx;
 	//private GameObject reference;
 
+	private int score;
+
 	// Use this for initialization
 	void Start () {
 
@@ -55,8 +57,21 @@ public class PlayerArk : MonoBehaviour {
 		{
 			firstTouch = true;
 		}*/
+		Debug.Log ("Score: " + score);
 
-
+	}
+	//score
+	public int GetScore()
+	{
+		return score;
+	}
+	public void SetScore(int score)
+	{
+		this.score = score;
+	}
+	public void sumPoints()
+	{
+		this.score++;
 	}
 
 	void PlayerMovementKeyboard(float speed)
@@ -103,6 +118,7 @@ public class PlayerArk : MonoBehaviour {
 		if (canshoot)
 		{
 			if (Input.GetMouseButtonUp (0) ) {
+				BallArk.constantV = true;
 				FirstShot = false;
 				ball.gameObject.GetComponent<Rigidbody> ().velocity = arrow.transform.up * force;
 				canshoot = false;

@@ -15,6 +15,7 @@ public class RestartArk : MonoBehaviour {
 	}
 	void OnMouseDown(){
 		PlayerArk.FirstShot = true;
+		GoalKeeper.speedkeeper = 17.0f;
 		Application.LoadLevel (2);
 	}
 }
