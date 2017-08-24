@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BallArk : MonoBehaviour {
+	
 	public float bounciness;
 	private bool bounceR = false;
 	private bool bounceL = false;
@@ -16,12 +17,13 @@ public class BallArk : MonoBehaviour {
 
 	private float playerx;
 	private float currentpos;
+	private float currentposy;
 	private float returnPos;
 
-	private bool wini=false;
+	public bool wini=false;
 
 
-	public static bool constantV = false;
+
 
 	private GameObject x2boost;
 	private GameObject x2Void;
@@ -70,15 +72,14 @@ public class BallArk : MonoBehaviour {
 	{
 		
 		bounceDirection ();
+		//constant speed
 		rigidbody.velocity = rigidbody.velocity.normalized * speed;
 
 	}
 
 	// Update is called once per frame
-	void Update () {
-
-
-
+	void Update () 
+	{
 		if (wini)
 		{
 			gameObject.transform.transform.position = new Vector2 (transform.position.x, porteria.transform.position.y);
@@ -86,12 +87,14 @@ public class BallArk : MonoBehaviour {
 
 		showP ();
 
+		currentpos = transform.position.x;
+		currentposy = transform.position.y;
 	}
 
 
 	void bounceDirection()
 	{
-		currentpos = transform.position.x;
+		
 		playerx = pjx.gameObject.transform.position.x;
 		if (currentpos > playerx) 
 		{
@@ -110,11 +113,11 @@ public class BallArk : MonoBehaviour {
 
 
 	public void GameEnd()
-	{
-		restart.gameObject.SetActive (true);
+	{		
 		gameObject.GetComponent<Rigidbody>().drag = 3.2f;
 		gameObject.GetComponent<Rigidbody>().angularDrag = 3.0f;
 		GoalKeeper.speedkeeper = 0.0f;
+		GameManager.arbrito = false;
 		speed = 0.0f;
 	}
 	public void GameWin()
@@ -124,6 +127,7 @@ public class BallArk : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody>().drag = 3.2f;
 		gameObject.GetComponent<Rigidbody>().angularDrag = 3.0f;
 		GoalKeeper.speedkeeper = 0.0f;
+		GameManager.arbrito = false;
 		speed = 0.0f;
 
 	}
@@ -155,7 +159,7 @@ public class BallArk : MonoBehaviour {
 		
 		if (other.gameObject.tag == "Player" || other.gameObject.tag == "Respawn") 
 		{
-			var bouncinessX = Mathf.Abs (playerx - transform.position.x) * 8;
+			var bouncinessX = Mathf.Abs (playerx - transform.position.x) * 9;
 			if(bounceL)
 				rigidbody.velocity = new Vector3 (-bouncinessX, bounciness);
 			if(bounceR)
@@ -179,22 +183,25 @@ public class BallArk : MonoBehaviour {
 		if (other.gameObject.tag == "cube") 
 		{
 			x2counter++;
+			GameManager.oldScore++;
 			Destroy (other.gameObject);
-			rigidbody.velocity = new Vector3 (-other.relativeVelocity.x, other.relativeVelocity.y);
-			pjx.GetComponent<PlayerArk>().sumPoints();
-			if (x2counter >= 2)
+		
+			GameManager.Instance.sumPoints();
+			if (x2counter > 1)
 			{
 				ShowX2 ();
-				pjx.GetComponent<PlayerArk>().sumPoints();
+				GameManager.Instance.sumPoints();
+				GameManager.oldScore++;
 			}
 			showPart = true;
-
 
 			particle.gameObject.transform.position = new Vector3 (other.transform.position.x, other.transform.position.y, particle.transform.position.z);
 		}
 		if (other.gameObject.tag == "GameOver")
 		{
-			GameEnd ();
+			//GameEnd ();
+			GameManager.arbrito = false;
+			GameManager.Instance.GameEnd();
 			x2counter = 0.0f;
 		}
 
@@ -203,16 +210,11 @@ public class BallArk : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "porteria")
 		{
+			GameManager.arbrito = false;
 			GameWin ();
 			wini = true;
 			x2counter = 0.0f;
 		}
-
-
-	}
-	void OnCollisionExit(Collision other)
-	{
-		
 	}
 
 

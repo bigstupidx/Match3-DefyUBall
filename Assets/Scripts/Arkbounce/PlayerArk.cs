@@ -8,7 +8,7 @@ public class PlayerArk : MonoBehaviour {
 	private bool cantgoR = false;
 	private bool cantgoL = false;
 
-	private bool canshoot = true;
+	public  bool canshoot = true;
 	private bool canCatch = false;
 	private bool canMove = false;
 	private bool takeBall = false;
@@ -28,7 +28,11 @@ public class PlayerArk : MonoBehaviour {
 	private float playerx;
 	//private GameObject reference;
 
-	private int score;
+	//private int score;
+
+	private float timer;
+
+	private bool hitY = false;
 
 	// Use this for initialization
 	void Start () {
@@ -58,8 +62,19 @@ public class PlayerArk : MonoBehaviour {
 			firstTouch = true;
 		}*/
 
-
+		if (hitY) 
+		{
+			timer += Time.deltaTime;
+			speed = 20.0f;
+			if(timer>=1.0f)
+			{
+				speed = 100.0f;
+				timer = 0.0f;
+				hitY = false;
+			}
+		}
 	}
+	/*
 	//score
 	public int GetScore()
 	{
@@ -72,7 +87,7 @@ public class PlayerArk : MonoBehaviour {
 	public void sumPoints()
 	{
 		this.score++;
-	}
+	}*/
 
 	void PlayerMovementKeyboard(float speed)
 	{
@@ -89,6 +104,8 @@ public class PlayerArk : MonoBehaviour {
 			}
 		}
 	}
+
+
 	void PlayerMovementTouch(float speed)
 	{
 		if (Input.touchCount > 0) {
@@ -111,6 +128,7 @@ public class PlayerArk : MonoBehaviour {
 	{
 		if (FirstShot == true)
 		{
+			arrow.SetActive (true);
 			ball.transform.position = new Vector2 (this.transform.position.x, arrow.transform.position.y);
 			//make arrow follow player
 			arrow.gameObject.transform.position = new Vector2 (this.transform.position.x, arrow.transform.position.y);
@@ -118,7 +136,7 @@ public class PlayerArk : MonoBehaviour {
 		if (canshoot)
 		{
 			if (Input.GetMouseButtonUp (0) ) {
-				BallArk.constantV = true;
+				
 				FirstShot = false;
 				ball.gameObject.GetComponent<Rigidbody> ().velocity = arrow.transform.up * force;
 				canshoot = false;
@@ -143,6 +161,14 @@ public class PlayerArk : MonoBehaviour {
 				
 	}
 
+	void hiByYellow()
+	{
+		hitY = true;
+	}
+	void hitByRed()
+	{
+		GameManager.Instance.GameEnd();
+	}
 
 
 	//Collisions
@@ -177,6 +203,18 @@ public class PlayerArk : MonoBehaviour {
 			cantgoR = false;
 		}
 
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "yellow") 
+		{
+			hiByYellow ();
+		}
+		if (other.gameObject.tag == "red") 
+		{
+			hitByRed ();
+		}
 	}
 
 

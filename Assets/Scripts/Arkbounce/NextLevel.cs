@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NextLevel : MonoBehaviour {
 
+	private GameObject formation1;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,11 +13,16 @@ public class NextLevel : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		
 	}
 
-	void OnMouseDown(){
+	void OnMouseDown ()
+	{
 		PlayerArk.FirstShot = true;
 		GoalKeeper.speedkeeper = 17.0f;
-		//Application.LoadLevel (3);
+		GameManager.arbrito = true;
+		GameManager.oldScore = 0;
+		GameManager.currentLevel++;
+		GameManager.Instance.StartGame ();
 	}
 }

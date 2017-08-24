@@ -37,6 +37,17 @@ TagManager:
   - x2boost
   - Particle
   - nextL
+  - arbitro
+  - cardVoid
+  - aSpot2
+  - aSpot1
+  - aSpot3
+  - GameManager
+  - Score
+  - defenseSet
+  - formation1
+  - formation2
+  - formation3
   layers:
   - Default
   - TransparentFX

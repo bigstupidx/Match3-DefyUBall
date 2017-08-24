@@ -1,18 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arkbounce\BallArk.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arkbounce\Arbrito.cs">
     <Files>
-      <File FileName="Assets\Scripts\Arkbounce\PlayerArk.cs" Line="60" Column="3" />
-      <File FileName="Assets\Scripts\Arkbounce\ShowScore.cs" Line="24" Column="1" />
-      <File FileName="Assets\Scripts\Arkbounce\BallArk.cs" Line="158" Column="31" />
-      <File FileName="..\..\..\Downloads\JellyAdventureFINALV1\JellyAdventure\Jelly Adventure\Assets\Scripts\Disparar.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game\Ball.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameLogic.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\Downloads\MadHerov1.4\MadHerov1.4\MadHero\Assets\Scripts\Crosshair.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\Downloads\MadHerov1.4\MadHerov1.4\MadHero\Assets\Scripts\Disparar.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Arkbounce\RestartArk.cs" Line="20" Column="3" />
-      <File FileName="..\..\..\Downloads\JellyAdventureFINALV1\JellyAdventure\Jelly Adventure\Assets\Scripts\JellyMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Arkbounce\NextLevel.cs" Line="14" Column="3" />
+      <File FileName="Assets\Scripts\Arkbounce\PlayerArk.cs" Line="17" Column="38" />
+      <File FileName="Assets\Scripts\Arkbounce\BallArk.cs" Line="101" Column="19" />
+      <File FileName="Assets\Scripts\Arkbounce\GameManager.cs" Line="113" Column="31" />
+      <File FileName="Assets\Scripts\Arkbounce\RestartArk.cs" Line="27" Column="3" />
+      <File FileName="Assets\Scripts\Arkbounce\Arbrito.cs" Line="87" Column="29" />
+      <File FileName="Assets\Scripts\Arkbounce\NextLevel.cs" Line="12" Column="2" />
+      <File FileName="Assets\Scripts\Arkbounce\GoalKeeper.cs" Line="5" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
