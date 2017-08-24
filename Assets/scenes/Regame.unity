@@ -3533,6 +3533,7 @@ GameObject:
   - component: {fileID: 2129129003}
   - component: {fileID: 2129129002}
   - component: {fileID: 2129129001}
+  - component: {fileID: 2129129004}
   m_Layer: 8
   m_Name: ball
   m_TagString: Ball
@@ -3598,3 +3599,14 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4.05
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!75 &2129129004
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2129128999}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -200, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}

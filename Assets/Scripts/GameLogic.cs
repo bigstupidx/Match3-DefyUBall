@@ -65,7 +65,7 @@ public class GameLogic : MonoBehaviour {
 	void Update () {
 	
 		//Gravedad
-		Physics.gravity = new Vector3 (0.0f, gravy, 0.0f);
+		//Physics.gravity = new Vector3 (0.0f, gravy, 0.0f);
 
 
 		//Debug.Log (Time.deltaTime.ToString("N0"));

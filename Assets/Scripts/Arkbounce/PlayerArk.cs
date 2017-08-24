@@ -109,7 +109,7 @@ public class PlayerArk : MonoBehaviour {
 	void PlayerMovementTouch(float speed)
 	{
 		if (Input.touchCount > 0) {
-			if (canMove == false) {
+			if (FirstShot == false) {
 				if (!cantgoL) {
 					if (Input.GetTouch (0).position.x < Screen.width / 2) {
 						transform.Translate (Vector2.left * speed * Time.deltaTime);
@@ -119,6 +119,7 @@ public class PlayerArk : MonoBehaviour {
 					if (Input.GetTouch (0).position.x > Screen.width / 2) {
 						transform.Translate (Vector2.right * speed * Time.deltaTime);
 					}
+
 				}
 			}
 		}
@@ -139,11 +140,11 @@ public class PlayerArk : MonoBehaviour {
 				
 				FirstShot = false;
 				ball.gameObject.GetComponent<Rigidbody> ().velocity = arrow.transform.up * force;
-				canshoot = false;
 				arrow.SetActive (false);
 				takeBall = false;
 				canCatch = false;
 				canMove = true;
+				canshoot = false;
 			}
 
 		}

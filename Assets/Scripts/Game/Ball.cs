@@ -20,13 +20,14 @@ public class Ball : MonoBehaviour {
 	// Use this for initialization
 
 	private float next;
+	private float next1;
 	private float espera;
 
 	private float playerx;
 	private GameObject pjx;
 	private float currentpos;
 
-
+	private Rigidbody rigidbody;
 	void Start () {
 		//Bounce Force
 		bounce = 5000.0f;
@@ -36,10 +37,12 @@ public class Ball : MonoBehaviour {
 
 
 
-		espera = 0.2f;
+		espera = 0.5f;
 		pjx = (GameObject)GameObject.FindGameObjectWithTag ("Player");
 
 		playerx = pjx.gameObject.transform.position.x;
+
+		rigidbody = GetComponent<Rigidbody>();
 		}
 
 	
@@ -51,26 +54,33 @@ public class Ball : MonoBehaviour {
 		wbounce2 = Random.Range (-800,800);
 
 		//Debug.Log (onTouch);
-		//Debug.Log (bounce2);
+		Debug.Log (bounce);
 
 	
 
 		//if==true add force
-		if (onTouch == true) 
-		{
-			if (Time.time > next)
-			{
-				if (this.gameObject.transform.position.x > pjx.gameObject.transform.position.x) {
+		if (onTouch == true) {
+			return;
+			//rigidbody.velocity = rigidbody.velocity.normalized * bounce;
+			if (Time.time > next) {
+				if (this.gameObject.transform.position.x >= pjx.gameObject.transform.position.x) {
 					
-					this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (bounce2, bounce));
-					next = Time.time + espera;
+					this.gameObject.GetComponent<Rigidbody> ().AddForce (new Vector2 (bounce2, bounce));
+
 				}
+
 				if (this.gameObject.transform.position.x < pjx.gameObject.transform.position.x) {
-					this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (-bounce2, bounce));
-					next = Time.time + espera;
+					this.gameObject.GetComponent<Rigidbody> ().AddForce (new Vector2 (-bounce2, bounce));
+
 				}
+				next = Time.time + espera;
 			}
+			/*if (this.gameObject.transform.position.x == pjx.gameObject.transform.position.x) {
+					this.gameObject.GetComponent<Rigidbody> ().AddRelativeForce (new Vector2 (bounce / 2, bounce / 2));
+				}*/
+			
 		}
+	
 		
 	}
 

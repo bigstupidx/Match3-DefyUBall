@@ -58,13 +58,13 @@ public class Arbrito : MonoBehaviour {
 		if (GameManager.arbrito) {
 			timer += Time.deltaTime;
 
-			if (timer >= 25.0f) {
+			if (timer >= 12.0f) {
 				gospot1 = true;
 			}
-			if (timer >= 28.0f)
+			if (timer >= 15.0f)
 				shootCardY ();
 
-			if (timer >= 40.0f)
+			if (timer >= 20.0f)
 				shootCardR ();
 
 			if (counter == 1) {

@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
 
 	public void StartGame()
 	{
-		
+		GameManager.oldScore = 0;
 		restart.gameObject.SetActive (false);
 		nextL.gameObject.SetActive (false);
 		pspeed.speed = 100.0f;
@@ -92,11 +92,14 @@ public class GameManager : MonoBehaviour {
 			go3.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			go3.transform.localScale = new Vector3 (1, 1, 1);
 		}
+		if (currentLevel > 3)
+			currentLevel = 1;
 		
 	}
 	void Update()
 	{
-
+		if (score < 0)
+			score = 0;
 
 	}
 

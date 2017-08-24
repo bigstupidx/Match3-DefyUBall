@@ -1917,7 +1917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canshoot: 1
-  force: 100
+  force: 500
   speed: 100
 --- !u!54 &1721080534
 Rigidbody:
@@ -1946,7 +1946,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: -3.46, y: 1, z: 1}
+  m_Size: {x: -2.62, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!224 &1878600460 stripped
 RectTransform:
@@ -2102,7 +2102,7 @@ ConstantForce:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1933270918}
   m_Enabled: 1
-  m_Force: {x: 0, y: -22.5, z: 0}
+  m_Force: {x: 0, y: -80, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -2118,12 +2118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f535399e11aa55d4da5f9c9c1506b864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 30
+  bounciness: 70
   menu: {fileID: 743743716}
   restart: {fileID: 178730722}
   nextL: {fileID: 1266885950}
   wini: 0
-  speed: 80
+  speed: 100
 --- !u!54 &1933270922
 Rigidbody:
   m_ObjectHideFlags: 0

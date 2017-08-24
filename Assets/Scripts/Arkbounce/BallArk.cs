@@ -159,11 +159,11 @@ public class BallArk : MonoBehaviour {
 		
 		if (other.gameObject.tag == "Player" || other.gameObject.tag == "Respawn") 
 		{
-			var bouncinessX = Mathf.Abs (playerx - transform.position.x) * 9;
+			var bouncinessX = Mathf.Abs (playerx - transform.position.x) * 8;
 			if(bounceL)
-				rigidbody.velocity = new Vector3 (-bouncinessX, bounciness);
+				rigidbody.velocity = new Vector3 (-bouncinessX, bounciness,0);
 			if(bounceR)
-				rigidbody.velocity = new Vector3 (bouncinessX, bounciness);
+				rigidbody.velocity = new Vector3 (bouncinessX, bounciness,0);
 			
 			x2counter = 0.0f;
 		
