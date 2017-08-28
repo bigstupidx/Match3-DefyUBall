@@ -82,7 +82,7 @@ public class BallArk : MonoBehaviour {
 	{
 		if (wini)
 		{
-			gameObject.transform.transform.position = new Vector2 (transform.position.x, porteria.transform.position.y);
+			//gameObject.transform.transform.position = new Vector2 (transform.position.x, porteria.transform.position.y);
 		}
 
 		showP ();
@@ -114,7 +114,7 @@ public class BallArk : MonoBehaviour {
 
 	public void GameEnd()
 	{		
-		gameObject.GetComponent<Rigidbody>().drag = 3.2f;
+		gameObject.GetComponent<Rigidbody>().drag = 6.2f;
 		gameObject.GetComponent<Rigidbody>().angularDrag = 3.0f;
 		GoalKeeper.speedkeeper = 0.0f;
 		GameManager.arbrito = false;
@@ -122,9 +122,9 @@ public class BallArk : MonoBehaviour {
 	}
 	public void GameWin()
 	{
-		restart.gameObject.SetActive (true);
+		//restart.gameObject.SetActive (true);
 		nextL.gameObject.SetActive (true);
-		gameObject.GetComponent<Rigidbody>().drag = 3.2f;
+		gameObject.GetComponent<Rigidbody>().drag = 6.2f;	
 		gameObject.GetComponent<Rigidbody>().angularDrag = 3.0f;
 		GoalKeeper.speedkeeper = 0.0f;
 		GameManager.arbrito = false;

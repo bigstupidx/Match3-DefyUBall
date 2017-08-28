@@ -32,7 +32,7 @@ public class RestartArk : MonoBehaviour {
 		Destroy (formations.go2);
 		Destroy (formations.go3);
 
-		GameManager.Instance.StartGame ();
+		GameManager.Instance.nextFormation ();
 
 	}
 }

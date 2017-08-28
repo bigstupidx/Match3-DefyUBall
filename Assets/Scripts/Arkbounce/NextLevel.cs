@@ -24,6 +24,7 @@ public class NextLevel : MonoBehaviour {
 		GameManager.oldScore = 0;
 		GameManager.currentLevel++;
 
-		GameManager.Instance.StartGame ();
+		//GameManager.Instance.StartGame ();
+		GameManager.Instance.nextFormation ();
 	}
 }
