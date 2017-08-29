@@ -118,6 +118,7 @@ public class BallArk : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody>().angularDrag = 3.0f;
 		GoalKeeper.speedkeeper = 0.0f;
 		GameManager.arbrito = false;
+
 		speed = 0.0f;
 	}
 	public void GameWin()
@@ -159,7 +160,7 @@ public class BallArk : MonoBehaviour {
 		
 		if (other.gameObject.tag == "Player" || other.gameObject.tag == "Respawn") 
 		{
-			var bouncinessX = Mathf.Abs (playerx - transform.position.x) * 8;
+			var bouncinessX = Mathf.Abs (playerx - transform.position.x) * 3;
 			if(bounceL)
 				rigidbody.velocity = new Vector3 (-bouncinessX, bounciness,0);
 			if(bounceR)

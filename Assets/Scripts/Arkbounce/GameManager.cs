@@ -65,9 +65,10 @@ public class GameManager : MonoBehaviour {
 	{
 		
 
-		currentLevel = Random.Range (1, formationPrefabs.Length + 1);
-		//currentLevel = 6;
+	//	currentLevel = Random.Range (1, formationPrefabs.Length + 1);
+		//currentLevel = 4;
 
+		//arb.gospot3 = true;
 		nextFormation ();
 
 
@@ -100,14 +101,14 @@ public class GameManager : MonoBehaviour {
 		}
 		if (currentLevel == 2) 
 		{
-			//Destroy (go1.gameObject);
+			
 			go2 = Instantiate(formationPrefabs[1]);
 			go2.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			go2.transform.localScale = new Vector3 (1, 1, 1);
 		}
 		if (currentLevel == 3) 
 		{
-			//Destroy (go2.gameObject);
+			
 			go3 = Instantiate(formationPrefabs[2]);
 			go3.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			go3.transform.localScale = new Vector3 (1, 1, 1);
@@ -115,7 +116,7 @@ public class GameManager : MonoBehaviour {
 
 		if (currentLevel == 4) 
 		{
-			//Destroy (go2.gameObject);
+			
 			go4 = Instantiate(formationPrefabs[3]);
 			go4.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			go4.transform.localScale = new Vector3 (1, 1, 1);
@@ -124,7 +125,7 @@ public class GameManager : MonoBehaviour {
 
 		if (currentLevel == 5) 
 		{
-			//Destroy (go2.gameObject);
+			
 			go5 = Instantiate(formationPrefabs[4]);
 			go5.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			go5.transform.localScale = new Vector3 (1, 1, 1);
@@ -132,7 +133,7 @@ public class GameManager : MonoBehaviour {
 
 		if (currentLevel == 6) 
 		{
-			//Destroy (go2.gameObject);
+			
 			go6 = Instantiate(formationPrefabs[5]);
 			go6.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			go6.transform.localScale = new Vector3 (1, 1, 1);
@@ -144,8 +145,8 @@ public class GameManager : MonoBehaviour {
 	}
 	void Update()
 	{
-		Debug.Log ("time; " +Time.time.ToString("n0"));
-		Debug.Log ("currentL " + currentLevel);
+		/*Debug.Log ("time; " +Time.time.ToString("n0"));
+		Debug.Log ("currentL " + currentLevel);*/
 
 		if (score < 0)
 			score = 0;

@@ -5,9 +5,10 @@ using UnityEngine;
 public class NextLevel : MonoBehaviour {
 
 	private GameObject formation1;
+
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame

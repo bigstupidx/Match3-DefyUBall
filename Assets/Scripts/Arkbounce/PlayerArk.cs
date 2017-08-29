@@ -211,6 +211,7 @@ public class PlayerArk : MonoBehaviour {
 		if (other.gameObject.tag == "yellow") 
 		{
 			hiByYellow ();
+			Arbrito.ShootRed = true;
 		}
 		if (other.gameObject.tag == "red") 
 		{

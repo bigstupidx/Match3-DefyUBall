@@ -7,6 +7,7 @@ public class RestartArk : MonoBehaviour {
 	private GameManager score;
 	private GameManager formations;
 	//private GameManager keepscore;
+	private Arbrito arb;
 
 
 	// Use this for initialization
@@ -14,6 +15,7 @@ public class RestartArk : MonoBehaviour {
 		score = FindObjectOfType<GameManager>();
 		formations = FindObjectOfType<GameManager>();
 		//keepscore = FindObjectOfType<GameManager>();
+		arb = FindObjectOfType<Arbrito>();
 	}
 	
 	// Update is called once per frame
@@ -28,10 +30,6 @@ public class RestartArk : MonoBehaviour {
 		PlayerArk.FirstShot = true;
 		score.score -= GameManager.oldScore;
 		GameManager.oldScore = 0;
-		Destroy (formations.go1);
-		Destroy (formations.go2);
-		Destroy (formations.go3);
-
 		GameManager.Instance.nextFormation ();
 
 	}
