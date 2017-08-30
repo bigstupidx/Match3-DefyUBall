@@ -62,7 +62,7 @@ public class PlayerArk : MonoBehaviour {
 			firstTouch = true;
 		}*/
 
-		if (hitY) 
+		/*if (hitY) 
 		{
 			timer += Time.deltaTime;
 			speed = 20.0f;
@@ -72,22 +72,8 @@ public class PlayerArk : MonoBehaviour {
 				timer = 0.0f;
 				hitY = false;
 			}
-		}
+		}*/
 	}
-	/*
-	//score
-	public int GetScore()
-	{
-		return score;
-	}
-	public void SetScore(int score)
-	{
-		this.score = score;
-	}
-	public void sumPoints()
-	{
-		this.score++;
-	}*/
 
 	void PlayerMovementKeyboard(float speed)
 	{

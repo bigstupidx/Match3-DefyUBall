@@ -59,25 +59,26 @@ public class Arbrito : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (GameManager.arbrito + "arbrito");
-		Debug.Log ("spot1= " + gospot1);
+		//Debug.Log (GameManager.arbrito + "arbrito");
+		//Debug.Log ("spot1= " + gospot1);
 		//Debug.Log ("timer= " + timer);
 		/*Debug.Log ("spot2= " + gospot2);*/
-		if (GameManager.arbrito) {
-			boolSets ();
-			timer += Time.deltaTime;
+		if (!PlayerArk.FirstShot) {
+			if (GameManager.arbrito) {
+				boolSets ();
+				timer += Time.deltaTime;
 
-			if (timer >= 14.0f && timer <=14.1f) {
-				gospot1 = true;
+				if (timer >= 14.0f && timer <= 14.1f) {
+					gospot1 = true;
 
-			}
-			if (timer >= 17.5f)
-				shootCardY ();
+				}
+				if (timer >= 17.5f)
+					shootCardY ();
 
-			if (ShootRed)
-				shootCardR ();
+				if (ShootRed)
+					shootCardR ();
 
-			/*if (counter == 1) {
+				/*if (counter == 1) {
 				gospot2 = true;
 				gospot1 = false;
 			} else if (counter == 2) {
@@ -86,37 +87,36 @@ public class Arbrito : MonoBehaviour {
 				startTime2 = true;
 				counter = 0;
 			} */
-			if (time2 >= 15.0f) {
-				gospot3 = false;
-				gospot1 = true;
-				time2 = 0.0f;
-				startTime2 = false;
-			}
-
-			if (startTime2)
-				time2 += Time.deltaTime;
-			if (gospot1)
-			{
-				timerp += Time.deltaTime;
-				if (timerp >= 10.0f) {
-					gospot1 = false;
-					gospot2 = true;
-					timerp = 0.0f;
-				}
-			}
-			if (gospot2)
-			{
-				timerp2 += Time.deltaTime;
-				if (timerp2 >= 10.0f) {
+				if (time2 >= 15.0f) {
+					gospot3 = false;
 					gospot1 = true;
-					timerp2 = 0.0f;
+					time2 = 0.0f;
+					startTime2 = false;
 				}
-			}
+
+				if (startTime2)
+					time2 += Time.deltaTime;
+				if (gospot1) {
+					timerp += Time.deltaTime;
+					if (timerp >= 10.0f) {
+						gospot1 = false;
+						gospot2 = true;
+						timerp = 0.0f;
+					}
+				}
+				if (gospot2) {
+					timerp2 += Time.deltaTime;
+					if (timerp2 >= 10.0f) {
+						gospot1 = true;
+						timerp2 = 0.0f;
+					}
+				}
 		
-			movePos ();
+				movePos ();
+			}
+			if (GameManager.arbrito == false)
+				ResetEverything ();
 		}
-		if (GameManager.arbrito == false)
-			ResetEverything ();
 	}
 
 	void shootCardY()
@@ -165,7 +165,7 @@ public class Arbrito : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Ball") 
 		{
-			gospot3 = true;
+			ResetEverything ();
 		}
 	}
 

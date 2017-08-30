@@ -114,8 +114,8 @@ public class BallArk : MonoBehaviour {
 
 	public void GameEnd()
 	{		
-		gameObject.GetComponent<Rigidbody>().drag = 6.2f;
-		gameObject.GetComponent<Rigidbody>().angularDrag = 3.0f;
+		gameObject.GetComponent<Rigidbody>().drag = 1000.0f;
+		gameObject.GetComponent<Rigidbody>().angularDrag = 1000.0f;
 		GoalKeeper.speedkeeper = 0.0f;
 		GameManager.arbrito = false;
 
@@ -125,8 +125,8 @@ public class BallArk : MonoBehaviour {
 	{
 		//restart.gameObject.SetActive (true);
 		nextL.gameObject.SetActive (true);
-		gameObject.GetComponent<Rigidbody>().drag = 6.2f;	
-		gameObject.GetComponent<Rigidbody>().angularDrag = 3.0f;
+		gameObject.GetComponent<Rigidbody>().drag = 1000.0f;	
+		gameObject.GetComponent<Rigidbody>().angularDrag = 1000.0f;
 		GoalKeeper.speedkeeper = 0.0f;
 		GameManager.arbrito = false;
 		speed = 0.0f;
@@ -212,6 +212,7 @@ public class BallArk : MonoBehaviour {
 		if (other.gameObject.tag == "porteria")
 		{
 			GameManager.arbrito = false;
+			GameManager.Instance.advance = false;
 			GameWin ();
 			wini = true;
 			x2counter = 0.0f;

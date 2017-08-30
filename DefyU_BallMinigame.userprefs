@@ -1,10 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\Ball.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arkbounce\GameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Arkbounce\PlayerArk.cs" Line="193" Column="4" />
-      <File FileName="Assets\Scripts\Arkbounce\BallArk.cs" Line="163" Column="64" />
-      <File FileName="Assets\Scripts\Game\Ball.cs" Line="84" Column="3" />
+      <File FileName="Assets\Scripts\Arkbounce\PlayerArk.cs" Line="70" Column="5" />
+      <File FileName="Assets\Scripts\Arkbounce\BallArk.cs" Line="213" Column="4" />
+      <File FileName="Assets\Scripts\Arkbounce\Arbrito.cs" Line="112" Column="7" />
+      <File FileName="Assets\Scripts\Arkbounce\GameManager.cs" Line="183" Column="3" />
+      <File FileName="Assets\Scripts\Arkbounce\NextLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Arkbounce\RestartArk.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Arkbounce\ShowScore.cs" Line="30" Column="2" />
+      <File FileName="Assets\Scripts\Arkbounce\MakeEnd.cs" Line="17" Column="2" />
+      <File FileName="Assets\Scripts\Arkbounce\AimPlayer.cs" Line="25" Column="43" />
+      <File FileName="Assets\Scripts\Arkbounce\GoalKeeper.cs" Line="25" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
