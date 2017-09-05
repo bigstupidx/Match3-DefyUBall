@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 12
   productGUID: ee8d6a96d9392984da9a2c31c5a98a8e
   AndroidProfiler: 0
-  defaultScreenOrientation: 2
+  defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -216,7 +216,7 @@ PlayerSettings:
   appleEnableAutomaticSigning: 0
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  androidSplashScreen: {fileID: 0}
+  androidSplashScreen: {fileID: 2800000, guid: 3cad1590251df974397e1b11a86ff3a0, type: 3}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
   AndroidTVCompatibility: 1

@@ -15,6 +15,9 @@ public class BallArk : MonoBehaviour {
 	private GameObject pjx;
 	private GameObject porteria;
 
+	private GameObject lR;
+	private GameObject lF;
+
 	private float playerx;
 	private float currentpos;
 	private float currentposy;
@@ -53,6 +56,8 @@ public class BallArk : MonoBehaviour {
 
 
 		porteria = (GameObject)GameObject.FindGameObjectWithTag ("porteria");
+		lR= (GameObject)GameObject.FindGameObjectWithTag ("limitR");
+		lF = (GameObject)GameObject.FindGameObjectWithTag ("limitL");
 
 		x2boost = (GameObject)GameObject.FindGameObjectWithTag ("x2boost");
 		x2Void = (GameObject)GameObject.FindGameObjectWithTag ("x2void");
@@ -89,6 +94,8 @@ public class BallArk : MonoBehaviour {
 
 		currentpos = transform.position.x;
 		currentposy = transform.position.y;
+
+		putBallBack ();
 	}
 
 
@@ -216,6 +223,20 @@ public class BallArk : MonoBehaviour {
 			GameWin ();
 			wini = true;
 			x2counter = 0.0f;
+		}
+	}
+
+	void putBallBack()
+	{
+		if (gameObject.transform.position.x < lF.transform.position.x) {
+			
+			PlayerArk.FirstShot = true;
+			PlayerArk.canshoot = true;
+		}
+		if (gameObject.transform.position.x > lR.transform.position.x) {
+			
+			PlayerArk.FirstShot = true;
+			PlayerArk.canshoot = true;
 		}
 	}
 

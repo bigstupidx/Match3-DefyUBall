@@ -24,7 +24,7 @@ public class NextLevel : MonoBehaviour {
 		GameManager.arbrito = true;
 		GameManager.oldScore = 0;
 		GameManager.currentLevel++;
-
+		Input.ResetInputAxes ();
 		//GameManager.Instance.StartGame ();
 		GameManager.Instance.nextFormation ();
 	}

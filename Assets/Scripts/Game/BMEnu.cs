@@ -30,8 +30,8 @@ public class BMEnu : MonoBehaviour {
 
 		GameManager.oldScore = 0;
 
-		pspeed.speed = 100.0f;
-		pspeed.canshoot = true;
+		//pspeed.speed = 100.0f;
+		PlayerArk.canshoot = true;
 		ball.speed = 80.0f;
 		arb.ResetEverything();
 		ball.wini = false;

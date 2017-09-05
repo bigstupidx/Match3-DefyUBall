@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Arkbounce\ArrowAim.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\BallArk.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\DestroyYellow.cs" />
+     <Compile Include="Assets\Scripts\Arkbounce\ExplodeLife.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\GameManager.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\GoalKeeper.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\MakeEnd.cs" />
@@ -94,6 +95,8 @@
      <Compile Include="Assets\Scripts\Game\Watch.cs" />
      <Compile Include="Assets\Scripts\Game\Yellow.cs" />
      <Compile Include="Assets\Scripts\GameLogic.cs" />
+     <Compile Include="Assets\Scripts\MaxScore.cs" />
+     <Compile Include="Assets\Scripts\Menu\BounceBall.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeSkin.cs" />
      <Compile Include="Assets\Scripts\Menu\ChangeSkinP.cs" />
      <Compile Include="Assets\Scripts\Menu\GoArk.cs" />

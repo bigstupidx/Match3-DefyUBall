@@ -7,7 +7,7 @@ public class RestartArk : MonoBehaviour {
 	private GameManager score;
 	private GameManager formations;
 	//private GameManager keepscore;
-	private Arbrito arb;
+	//private Arbrito arb;
 
 
 	// Use this for initialization
@@ -15,7 +15,7 @@ public class RestartArk : MonoBehaviour {
 		score = FindObjectOfType<GameManager>();
 		formations = FindObjectOfType<GameManager>();
 		//keepscore = FindObjectOfType<GameManager>();
-		arb = FindObjectOfType<Arbrito>();
+		//arb = FindObjectOfType<Arbrito>();
 	}
 	
 	// Update is called once per frame
@@ -23,14 +23,16 @@ public class RestartArk : MonoBehaviour {
 		
 		
 	}
-	void OnMouseDown(){
-		PlayerArk.FirstShot = true;
-		GoalKeeper.speedkeeper = 17.0f;
-		GameManager.arbrito = true;
-		PlayerArk.FirstShot = true;
-		score.score -= GameManager.oldScore;
-		GameManager.oldScore = 0;
-		GameManager.Instance.nextFormation ();
+	void OnMouseDown(){			
+
+			Input.ResetInputAxes ();
+			//GameManager.Instance.isMenu = false;
+
+			GameManager.arbrito = true;
+
+			score.score -= GameManager.oldScore;
+			GameManager.oldScore = 0;
+			GameManager.Instance.nextFormation ();
 
 	}
 }

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoArk : MonoBehaviour {
+public class BounceBall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
+
 	}
 	
 	// Update is called once per frame
@@ -14,9 +15,9 @@ public class GoArk : MonoBehaviour {
 		
 	}
 
-	void OnMouseDown()
+	void OnCollisionEnter(Collision other)
 	{
-		Application.LoadLevel(1);
-
+		if(other.gameObject.tag=="Respawn")
+			gameObject.GetComponent<Rigidbody>().velocity = new Vector3 (0, 20,0);
 	}
 }

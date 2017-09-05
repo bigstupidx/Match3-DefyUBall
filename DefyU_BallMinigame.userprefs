@@ -1,18 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arkbounce\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arkbounce\BallArk.cs">
     <Files>
-      <File FileName="Assets\Scripts\Arkbounce\PlayerArk.cs" Line="70" Column="5" />
-      <File FileName="Assets\Scripts\Arkbounce\BallArk.cs" Line="213" Column="4" />
-      <File FileName="Assets\Scripts\Arkbounce\Arbrito.cs" Line="112" Column="7" />
-      <File FileName="Assets\Scripts\Arkbounce\GameManager.cs" Line="183" Column="3" />
-      <File FileName="Assets\Scripts\Arkbounce\NextLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Arkbounce\RestartArk.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Arkbounce\ShowScore.cs" Line="30" Column="2" />
-      <File FileName="Assets\Scripts\Arkbounce\MakeEnd.cs" Line="17" Column="2" />
-      <File FileName="Assets\Scripts\Arkbounce\AimPlayer.cs" Line="25" Column="43" />
-      <File FileName="Assets\Scripts\Arkbounce\GoalKeeper.cs" Line="25" Column="18" />
+      <File FileName="Assets\Scripts\Arkbounce\PlayerArk.cs" Line="38" Column="32" />
+      <File FileName="Assets\Scripts\Arkbounce\GameManager.cs" Line="212" Column="30" />
+      <File FileName="Assets\Scripts\Arkbounce\RestartArk.cs" Line="16" Column="48" />
+      <File FileName="Assets\Scripts\Arkbounce\NextLevel.cs" Line="27" Column="24" />
+      <File FileName="Assets\Scripts\Arkbounce\ArrowAim.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Arkbounce\BallArk.cs" Line="66" Column="3" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="DefyU_BallMinigame" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
