@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Arkbounce\PlayerArk.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\RestartArk.cs" />
      <Compile Include="Assets\Scripts\Arkbounce\ShowScore.cs" />
+     <Compile Include="Assets\Scripts\Arkbounce\ShowSum.cs" />
      <Compile Include="Assets\Scripts\Game\Ball.cs" />
      <Compile Include="Assets\Scripts\Game\Ball2.cs" />
      <Compile Include="Assets\Scripts\Game\BMEnu.cs" />

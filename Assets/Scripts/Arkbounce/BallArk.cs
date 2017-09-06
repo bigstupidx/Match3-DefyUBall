@@ -40,13 +40,21 @@ public class BallArk : MonoBehaviour {
 
 	private GameObject particle;
 	private float particlelife = 0.40f;
+	private float particlelife2 = 0.40f;
 	private bool showPart = false;
 
 
 	Vector3 lastPosition = Vector3.zero;
 	public float speed;
 
+	private ShowSum showsum;
+
 	private Rigidbody rigidbody;
+	private bool x2 =false;
+
+	public GameObject GrabBall;
+	private GameObject copyGrab;
+
 	// Use this for initialization
 	void Start () {
 
@@ -71,6 +79,8 @@ public class BallArk : MonoBehaviour {
 
 		rigidbody = GetComponent<Rigidbody>();
 
+		showsum = FindObjectOfType<ShowSum>();
+
 	}
 
 	void FixedUpdate()
@@ -92,10 +102,21 @@ public class BallArk : MonoBehaviour {
 
 		showP ();
 
+
 		currentpos = transform.position.x;
 		currentposy = transform.position.y;
 
 		putBallBack ();
+		if (x2)
+		{
+			showsum.showPlus (2);
+			particlelife2 -= Time.deltaTime;
+			if (particlelife2 < 0.0f) {
+				showsum.showPlus (0);
+				particlelife2 = 0.40f;
+				x2 = false;
+			}
+		}
 	}
 
 
@@ -138,17 +159,27 @@ public class BallArk : MonoBehaviour {
 		GameManager.arbrito = false;
 		speed = 0.0f;
 
+		showsum.showPlus(10);
+
+		for(int i= 0; i<10; i++)
+			GameManager.Instance.sumPoints();
+
 	}
 	void ShowX2()
 	{
-		copy = (GameObject)Instantiate (x2boost, x2Void.transform.position, x2boost.transform.rotation);
+		
+			copy = (GameObject)Instantiate (x2boost, x2Void.transform.position, x2boost.transform.rotation);
+			
+			Destroy (copy.gameObject, x2life);
 
-		Destroy (copy.gameObject, x2life);
+
+
 	}
 	void showP()
 	{
 		if (showPart) 
 		{
+			showsum.showPlus(1);
 			particle.SetActive(true);
 
 			particlelife -=Time.deltaTime;
@@ -156,6 +187,7 @@ public class BallArk : MonoBehaviour {
 			if (particlelife < 0.0f) {
 				particle.SetActive (false);
 				showPart = false;
+				showsum.showPlus(0);
 				particlelife = 0.40f;
 			}
 		}
@@ -193,17 +225,28 @@ public class BallArk : MonoBehaviour {
 			x2counter++;
 			GameManager.oldScore++;
 			Destroy (other.gameObject);
-		
+
 			GameManager.Instance.sumPoints();
 			if (x2counter > 1)
 			{
 				ShowX2 ();
+				x2 = true;
+
 				GameManager.Instance.sumPoints();
 				GameManager.oldScore++;
 			}
+
 			showPart = true;
 
 			particle.gameObject.transform.position = new Vector3 (other.transform.position.x, other.transform.position.y, particle.transform.position.z);
+			//SpawnGrab 5%
+			if (Random.value <= 0.05f) 
+			{
+				copyGrab = (GameObject)Instantiate (GrabBall, other.transform.position, other.transform.rotation);
+				Destroy (copyGrab, 8.0f);
+
+
+			}
 		}
 		if (other.gameObject.tag == "GameOver")
 		{

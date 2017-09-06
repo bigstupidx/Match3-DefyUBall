@@ -28,8 +28,6 @@ public class Arbrito : MonoBehaviour {
 	private float next;
 	public float wait;
 
-	private float next2;
-	private float wait2;
 
 	public float timer;
 	private float time2;
@@ -54,7 +52,8 @@ public class Arbrito : MonoBehaviour {
 		spot3 = (GameObject)GameObject.FindGameObjectWithTag ("aSpot3");
 
 
-		wait2 = 5.0f;
+		//wait2 = 5.0f;
+
 		}
 	
 	// Update is called once per frame
@@ -68,11 +67,11 @@ public class Arbrito : MonoBehaviour {
 				boolSets ();
 				timer += Time.deltaTime;
 
-				if (timer >= 14.0f && timer <= 14.1f) {
+				if (timer >= 2.0f && timer <= 2.1f) {
 					gospot1 = true;
 
 				}
-				if (timer >= 17.5f)
+				if (timer >= 10.0f)
 					shootCardY ();
 
 				if (ShootRed)
@@ -133,11 +132,11 @@ public class Arbrito : MonoBehaviour {
 	void shootCardR()
 	{
 		if (GameManager.arbrito) {
-			//if (Time.time > next2) {
+			
 				cardCR = (GameObject)Instantiate (cardR, cardV.transform.position, cardR.transform.rotation);
 				cardCR.gameObject.GetComponent<Rigidbody> ().velocity = cardV.transform.forward * force;
-				next2 = Time.time + wait2;
-			//}
+				
+
 			ShootRed = false;
 		}
 	}

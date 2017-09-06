@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
 	public static GameManager Instance;
 
@@ -66,26 +67,38 @@ public class GameManager : MonoBehaviour {
 	private GameObject player;
 	private GameObject playerSpawn;
 	private float pspawn;
-	void Awake(){
-		if (Instance == null) 
-		{
+
+	public GameObject arrow1;
+	public GameObject arrow2;
+	private float arrowt1;
+	private float arrowt2;
+	private float arrowTimer;
+	private ShowSum showsum;
+	public bool showArs=false;
+	private bool showArsOnce = true;
+
+
+	void Awake ()
+	{
+		if (Instance == null) {
 			Instance = this;
 
 		} 
 
 	}
 	// Use this for initialization
-	void Start () {
-		allD = GameObject.FindGameObjectsWithTag("cube");
-		ball = FindObjectOfType<BallArk>();
-		pspeed = FindObjectOfType<PlayerArk>();
-		arb = FindObjectOfType<Arbrito>();
-		liveE = FindObjectOfType<ExplodeLife>();
+	void Start ()
+	{
+		allD = GameObject.FindGameObjectsWithTag ("cube");
+		ball = FindObjectOfType<BallArk> ();
+		pspeed = FindObjectOfType<PlayerArk> ();
+		arb = FindObjectOfType<Arbrito> ();
+		liveE = FindObjectOfType<ExplodeLife> ();
 
 		player = (GameObject)GameObject.FindGameObjectWithTag ("Player");
 		playerSpawn = (GameObject)GameObject.FindGameObjectWithTag ("PlayerSpawn");
 
-
+		showsum = FindObjectOfType<ShowSum> ();
 
 		StartGame ();
 
@@ -98,29 +111,33 @@ public class GameManager : MonoBehaviour {
 	}
 
 
-	public void StartGame()
+	public void StartGame ()
 	{
 		
 
-	//	currentLevel = Random.Range (1, formationPrefabs.Length + 1);
+		//	currentLevel = Random.Range (1, formationPrefabs.Length + 1);
 		//currentLevel = 4;
 
-		showLives();
+		showLives ();
 
 		nextFormation ();
 		GameManager.Instance.isMenu = true;
+
+		showsum.showPlus (0);
+		arrow1.gameObject.SetActive (false);
+		arrow2.gameObject.SetActive (false);
 
 
 
 
 	}
 
-	public void nextFormation()
+	public void nextFormation ()
 	{
 		DestroyImmediate (currentFormation);
 
 		pspeed.canMove = false;
-		player.gameObject.transform.position = new Vector2 (pspawn,player.transform.position.y);
+		player.gameObject.transform.position = new Vector2 (pspawn, player.transform.position.y);
 		isMenu = false;
 
 		PlayerArk.FirstShot = true;
@@ -131,8 +148,8 @@ public class GameManager : MonoBehaviour {
 		//pspeed.speed = 40.0f;
 		PlayerArk.canshoot = true;
 		ball.speed = 60.0f;
-		ball.gameObject.GetComponent<Rigidbody>().drag = 0.0f;
-		ball.gameObject.GetComponent<Rigidbody>().angularDrag = 0.0f;
+		ball.gameObject.GetComponent<Rigidbody> ().drag = 0.0f;
+		ball.gameObject.GetComponent<Rigidbody> ().angularDrag = 0.0f;
 		arb.timer = 0.0f;
 		ball.wini = false;
 		arbrito = true;
@@ -141,53 +158,54 @@ public class GameManager : MonoBehaviour {
 		rowTime = 0.0f;
 
 
-		if (currentLevel == 1) 
-		{
+		if (currentLevel == 1) {
 			
 			currentFormation = Instantiate (formationPrefabs [0]);
 			currentFormation.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			//currentFormation.GetComponent<RectTransform>().anchoredPosition = new Vector3 (0.0f, 0.0f, 0.0f);
 			currentFormation.transform.localScale = new Vector3 (1, 1, 1);
+			arb.wait = 8.0f;
 
 		}
-		if (currentLevel == 2) 
-		{
+		if (currentLevel == 2) {
 			
-			currentFormation = Instantiate(formationPrefabs[1]);
+			currentFormation = Instantiate (formationPrefabs [1]);
 			currentFormation.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			currentFormation.transform.localScale = new Vector3 (1, 1, 1);
+			arb.wait = 6.0f;
 		}
-		if (currentLevel == 3) 
-		{
+		if (currentLevel == 3) {
 			
-			currentFormation = Instantiate(formationPrefabs[2]);
+			currentFormation = Instantiate (formationPrefabs [2]);
 			currentFormation.transform.SetParent (FindObjectOfType<Canvas> ().transform);		
 			currentFormation.transform.localScale = new Vector3 (1, 1, 1);
+			arb.wait = 4.0f;
 		}
 
-		if (currentLevel == 4) 
-		{
+		if (currentLevel == 4) {
 			
-			currentFormation = Instantiate(formationPrefabs[3]);
+			currentFormation = Instantiate (formationPrefabs [3]);
 			currentFormation.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			currentFormation.transform.localScale = new Vector3 (1, 1, 1);
+			arb.wait = 3.5f;
 		}
 
 
-		if (currentLevel == 5) 
-		{
+		if (currentLevel == 5) {
 			
-			currentFormation = Instantiate(formationPrefabs[4]);
+			currentFormation = Instantiate (formationPrefabs [4]);
 			currentFormation.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			currentFormation.transform.localScale = new Vector3 (1, 1, 1);
+
+			arb.wait = 3.5f;
 		}
 
-		if (currentLevel == 6) 
-		{
+		if (currentLevel == 6) {
 			
-			currentFormation = Instantiate(formationPrefabs[5]);
+			currentFormation = Instantiate (formationPrefabs [5]);
 			currentFormation.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			currentFormation.transform.localScale = new Vector3 (1, 1, 1);
+			arb.wait = 3.5f;
 		}
 		if (currentLevel > 6)
 			currentLevel = 1;
@@ -196,14 +214,26 @@ public class GameManager : MonoBehaviour {
 	}
 
 
-	void Update()
+	void Update ()
 	{
 		
 		//Debug.Log ("time; " +Time.time.ToString("n0"));
 		//Debug.Log ("currentL " + currentLevel);
 		//Debug.Log("makerow: "+ doRow);
+		if (currentLevel == 1){
+			if (showArsOnce == true) {
+				if (showArs) {
+					arrow1.gameObject.SetActive (true);
+					arrow2.gameObject.SetActive (true);
+					showArrows ();
 
-
+				}
+			}
+			if(!showArs){
+				arrow1.gameObject.SetActive (false);
+				arrow2.gameObject.SetActive (false);
+			}
+		}
 
 		pspawn = playerSpawn.transform.position.x;
 		if (score < 0)
@@ -223,9 +253,8 @@ public class GameManager : MonoBehaviour {
 				makeRow ();
 			}
 
-		}
-		if(lives == 0)
-		{
+		} 
+		if (lives == 0) {
 			restart.gameObject.SetActive (false);
 			CantRestart = true;
 			timeMenu -= Time.deltaTime;
@@ -241,12 +270,44 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+	public void showArrows ()
+	{
+		arrowt1 += Time.deltaTime;
+		arrowt2 += Time.deltaTime;
+		arrowTimer += Time.deltaTime;
+
+		if (arrowt1 >= 0.0f && arrowt1 <= 0.3f)
+			arrow1.transform.position = new Vector2 (arrow1.transform.position.x - 0.1f, arrow1.transform.position.y);
+		else if (arrowt1 > 0.3f && arrowt1 <= 0.6f) {
+			arrow1.transform.position = new Vector2 (arrow1.transform.position.x + 0.1f, arrow1.transform.position.y);
+		}
+		if (arrowt1 >= 0.6f)
+			arrowt1 = 0.0f;
+
+		if (arrowt2 >= 0.0f && arrowt2 <= 0.3f)
+			arrow2.transform.position = new Vector2 (arrow2.transform.position.x + 0.1f, arrow2.transform.position.y);
+		else if (arrowt2 > 0.3f && arrowt2 <= 0.6f) {
+			arrow2.transform.position = new Vector2 (arrow2.transform.position.x - 0.1f, arrow2.transform.position.y);
+		}
+		if (arrowt2 >= 0.6f)
+			arrowt2 = 0.0f;
+
+		if (arrowTimer >= 3.0f && arrowTimer <= 3.1f) {
+			showArs = false;
+			arrowTimer = 0.0f;
+			showArsOnce = false;
+
+		}
+	}
 
 
-	public void GameEnd()
+
+	
+
+	public void GameEnd ()
 	{
 		GameManager.arbrito = false;
-		if(!CantRestart)
+		if (!CantRestart)
 			restart.gameObject.SetActive (true);
 		
 		pspeed.speed = 0.0f;
@@ -259,9 +320,13 @@ public class GameManager : MonoBehaviour {
 		isMenu = true;
 		ball.GameEnd ();
 	
-	} 
-	public void GameWin()
+	}
+
+	public void GameWin ()
 	{
+		for (int i = 0; i < 5; i++)
+			GameManager.Instance.sumPoints ();
+		
 		GameManager.arbrito = false;
 		advance = false;
 		doRow = false;
@@ -269,26 +334,27 @@ public class GameManager : MonoBehaviour {
 		ball.GameWin ();
 		isMenu = true;
 
-	} 
+	}
 
-	public int GetScore()
+	public int GetScore ()
 	{
 		return score;
 	}
-	public void SetScore(int score)
+
+	public void SetScore (int score)
 	{
 		this.score = score;
 	}
-	public void sumPoints()
+
+	public void sumPoints ()
 	{
 		this.score++;
 	}
 
-	void makeRow()
+	void makeRow ()
 	{
-		if (Time.time > next)
-		{
-			if (currentLevel == 1 ||currentLevel == 2 || currentLevel == 4 ) {
+		if (Time.time > next) {
+			if (currentLevel == 1 || currentLevel == 2 || currentLevel == 4) {
 				goRow = Instantiate (formationPrefabs [6]);
 				goRow.transform.SetParent (currentFormation.transform);
 				//goRow.GetComponent<RectTransform>().anchoredPosition = new Vector3 (0.0f, 130.0f, 0.0f);
@@ -312,36 +378,40 @@ public class GameManager : MonoBehaviour {
 			next = Time.time + waitforNextRow;
 		}
 	}
-	void AdvanceFormation()
+
+	void AdvanceFormation ()
 	{
 		countDown += Time.deltaTime;
 
-			if (countDown >= timeToAdvance) {			
-				currentFormation.transform.position = new Vector2 (currentFormation.transform.position.x, currentFormation.transform.position.y - advanceDistance);
-				countDown = 0.0f;
-			}
+		if (countDown >= timeToAdvance) {			
+			currentFormation.transform.position = new Vector2 (currentFormation.transform.position.x, currentFormation.transform.position.y - advanceDistance);
+			countDown = 0.0f;
+		}
 			
 			
 
 			
 	}
 
-	public int GetLives()
+	public int GetLives ()
 	{
 		return lives;
 	}
-	public void SetLives(int lives)
+
+	public void SetLives (int lives)
 	{
 		this.lives = lives;
 	}
-	public void minusLives()
+
+	public void minusLives ()
 	{
 		if (lives > 0) {
 			this.lives--;
 		}
 
 	}
-	void showLives()
+
+	void showLives ()
 	{
 		
 		if (lives == 2) {
@@ -385,21 +455,21 @@ public class GameManager : MonoBehaviour {
 		}
 
 	}
-	void DestroyLive()
+
+	void DestroyLive ()
 	{
-		if (lives == 3) 
-		{
+		if (lives == 3) {
 			Live3.GetComponent<ExplodeLife> ().makeExplosion ();
 		}
-		if (lives == 2) 
-		{
+		if (lives == 2) {
 			Live2.GetComponent<ExplodeLife> ().makeExplosion ();
 		}
-		if (lives == 1) 
-		{
+		if (lives == 1) {
 			Live1.GetComponent<ExplodeLife> ().makeExplosion ();
 		}
 	}
+
+
 
 
 }
