@@ -23,7 +23,7 @@ public class RestartArk : MonoBehaviour {
 		
 		
 	}
-	void OnMouseDown(){			
+	void OnMouseUp(){			
 
 			Input.ResetInputAxes ();
 			//GameManager.Instance.isMenu = false;

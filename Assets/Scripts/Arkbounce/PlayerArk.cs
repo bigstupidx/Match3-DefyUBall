@@ -36,9 +36,9 @@ public class PlayerArk : MonoBehaviour
 
 	private bool hitY = false;
 
-	private float MinSpeed = 40.0f;
-	private float MaxSpeed = 150.0f;
-	private float TimeToMaxSpeed = 1.2f;
+	private float MinSpeed = 25.0f;
+	private float MaxSpeed = 200.0f;
+	private float TimeToMaxSpeed = 0.8f;
 	private float _timeTouch;
 
 	private float _timeTouchT;
@@ -145,7 +145,7 @@ canCatch = true;
 
 							}
 						}
-						if (!movingT)
+						if (!movingT || Input.GetMouseButtonUp (0))
 							_timeTouchT = 0.0f;
 					}
 
@@ -169,10 +169,9 @@ canCatch = true;
 		if (canshoot) {
 			if (!GameManager.Instance.isMenu) {
 
-				if (Input.GetMouseButtonUp (0)) {					
+				if (Input.GetMouseButton (0)) {					
 					FirstShot = false;
 					GameManager.Instance.showArs = true;
-
 					ball.gameObject.GetComponent<Rigidbody> ().velocity = arrow.transform.up * force;
 					arrow.SetActive (false);
 					takeBall = false;
@@ -247,6 +246,10 @@ canCatch = true;
 		}
 		if (other.gameObject.tag == "hand") {
 			canCatch = true;
+			Destroy (other.gameObject);
+		}
+		if (other.gameObject.tag == "DoublePoints") {
+			GameManager.Instance.x2Boost = true;
 			Destroy (other.gameObject);
 		}
 

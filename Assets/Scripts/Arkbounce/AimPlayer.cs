@@ -8,21 +8,18 @@ public class AimPlayer : MonoBehaviour {
 
 	public Transform target;
 
-	private GameObject player;
-	private float playerpos;
-	private GameObject card;
 
 	void Start () {
 		
-		card =  GameObject.FindGameObjectWithTag ("yellow");
-		player =  GameObject.FindGameObjectWithTag ("Player");
+
+
 
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		playerpos = player.transform.position.y;
+		
 
 		this.transform.LookAt(target);
 

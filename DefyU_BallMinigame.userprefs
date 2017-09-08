@@ -2,13 +2,18 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arkbounce\PlayerArk.cs">
     <Files>
-      <File FileName="Assets\Scripts\Arkbounce\PlayerArk.cs" Line="60" Column="2" />
-      <File FileName="Assets\Scripts\Arkbounce\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Arkbounce\RestartArk.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Arkbounce\NextLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Arkbounce\ArrowAim.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Arkbounce\BallArk.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Arkbounce\PlayerArk.cs" Line="50" Column="32" />
+      <File FileName="Assets\Scripts\Arkbounce\RestartArk.cs" Line="28" Column="28" />
+      <File FileName="Assets\Scripts\Arkbounce\GameManager.cs" Line="296" Column="56" />
+      <File FileName="Assets\Scripts\Menu\LeftArrowP.cs" Line="24" Column="18" />
+      <File FileName="Assets\Scripts\Arkbounce\ArrowAim.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\Arkbounce\BallArk.cs" Line="267" Column="4" />
+      <File FileName="Assets\Scripts\Arkbounce\ShowGoal.cs" Line="9" Column="17" />
+      <File FileName="Assets\Scripts\Arkbounce\ShowSum.cs" Line="23" Column="3" />
+      <File FileName="Assets\Scripts\Arkbounce\ExplodeLife.cs" Line="15" Column="3" />
       <File FileName="Assets\Scripts\Arkbounce\Arbrito.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Arkbounce\AimPlayer.cs" Line="16" Column="3" />
+      <File FileName="Assets\Scripts\Arkbounce\NextLevel.cs" Line="20" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

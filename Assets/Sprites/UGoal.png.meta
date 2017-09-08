@@ -1,0 +1,652 @@
+fileFormatVersion: 2
+guid: 2b7c7fd8ee5aff74c84ecd902bdeac12
+timeCreated: 1504857500
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UGoal_0
+    21300002: UGoal_1
+    21300004: UGoal_2
+    21300006: UGoal_3
+    21300008: UGoal_4
+    21300010: UGoal_5
+    21300012: UGoal_6
+    21300014: UGoal_7
+    21300016: UGoal_8
+    21300018: UGoal_9
+    21300020: UGoal_10
+    21300022: UGoal_11
+    21300024: UGoal_12
+    21300026: UGoal_13
+    21300028: UGoal_14
+    21300030: UGoal_15
+    21300032: UGoal_16
+    21300034: UGoal_17
+    21300036: UGoal_18
+    21300038: UGoal_19
+    21300040: UGoal_20
+    21300042: UGoal_21
+    21300044: UGoal_22
+    21300046: UGoal_23
+    21300048: UGoal_24
+    21300050: UGoal_25
+    21300052: UGoal_26
+    21300054: UGoal_27
+    21300056: UGoal_28
+    21300058: UGoal_29
+    21300060: UGoal_30
+    21300062: UGoal_31
+    21300064: UGoal_32
+    21300066: UGoal_33
+    21300068: UGoal_34
+    21300070: UGoal_35
+    21300072: UGoal_36
+    21300074: UGoal_37
+    21300076: UGoal_38
+    21300078: UGoal_39
+    21300080: UGoal_40
+    21300082: UGoal_41
+    21300084: UGoal_42
+    21300086: UGoal_43
+    21300088: UGoal_44
+    21300090: UGoal_45
+    21300092: UGoal_46
+    21300094: UGoal_47
+    21300096: UGoal_48
+    21300098: UGoal_49
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UGoal_0
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1877
+        width: 102
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_1
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1875
+        width: 110
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_2
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1872
+        width: 116
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_3
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 1868
+        width: 122
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_4
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 1866
+        width: 131
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_5
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 1863
+        width: 134
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_6
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 1860
+        width: 140
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_7
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1613
+        width: 143
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_8
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1610
+        width: 148
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_9
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1607
+        width: 154
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_10
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1605
+        width: 158
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_11
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1602
+        width: 163
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_12
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1600
+        width: 169
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_13
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 1597
+        width: 172
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_14
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1348
+        width: 179
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 1345
+        width: 184
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_16
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1341
+        width: 189
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_17
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1340
+        width: 196
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_18
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1338
+        width: 198
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_19
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 1335
+        width: 204
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_20
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 1333
+        width: 211
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1084
+        width: 215
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_22
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1081
+        width: 218
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_23
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1079
+        width: 226
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_24
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1077
+        width: 231
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_25
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 1078
+        width: 226
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_26
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 1082
+        width: 221
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_27
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1083
+        width: 217
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_28
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 838
+        width: 215
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_29
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 829
+        width: 232
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_30
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 821
+        width: 253
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_31
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 812
+        width: 271
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_32
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 812
+        width: 271
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_33
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 810
+        width: 268
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_34
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 813
+        width: 271
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UGoal_35
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 592
+        width: 205
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

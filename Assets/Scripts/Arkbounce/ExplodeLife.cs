@@ -11,7 +11,7 @@ public class ExplodeLife : MonoBehaviour {
 
 		anim = gameObject.GetComponent<Animator> ();
 
-		anim.SetBool ("explode", false);
+		anim.SetBool ("Explode", false);
 	}
 	
 	// Update is called once per frame
@@ -22,7 +22,7 @@ public class ExplodeLife : MonoBehaviour {
 
 	public void makeExplosion()
 	{
-		anim.SetBool ("explode", true);
+		anim.SetBool ("Explode", true);
 		Destroy (gameObject, 1.0f);
 	}
 }

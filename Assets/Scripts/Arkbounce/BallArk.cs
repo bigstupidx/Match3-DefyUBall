@@ -38,7 +38,8 @@ public class BallArk : MonoBehaviour {
 
 	private float x2counter;
 
-	private GameObject particle;
+	public GameObject particle;
+	private GameObject cparticle;
 	private float particlelife = 0.40f;
 	private float particlelife2 = 0.40f;
 	private bool showPart = false;
@@ -55,8 +56,17 @@ public class BallArk : MonoBehaviour {
 	public GameObject GrabBall;
 	private GameObject copyGrab;
 
+	public GameObject coin;
+	private GameObject copyCoin;
+
+
+	public GameObject Goal;
+	private ShowGoal showgoal;
+	public GameObject cGoal;
+	private bool bGoal = false;
 	// Use this for initialization
 	void Start () {
+		
 
 		x2life = 1.0f;
 
@@ -70,9 +80,7 @@ public class BallArk : MonoBehaviour {
 		x2boost = (GameObject)GameObject.FindGameObjectWithTag ("x2boost");
 		x2Void = (GameObject)GameObject.FindGameObjectWithTag ("x2void");
 		
-		particle = (GameObject)GameObject.FindGameObjectWithTag ("Particle");
-
-		particle.SetActive (false);
+	
 
 		restart.gameObject.SetActive (false);
 		nextL.gameObject.SetActive (false);
@@ -80,6 +88,8 @@ public class BallArk : MonoBehaviour {
 		rigidbody = GetComponent<Rigidbody>();
 
 		showsum = FindObjectOfType<ShowSum>();
+
+		showgoal = FindObjectOfType<ShowGoal> ();
 
 	}
 
@@ -99,14 +109,15 @@ public class BallArk : MonoBehaviour {
 		{
 			//gameObject.transform.transform.position = new Vector2 (transform.position.x, porteria.transform.position.y);
 		}
-
-		showP ();
+		if(showPart)
+			ShowSumx1 ();
 
 
 		currentpos = transform.position.x;
 		currentposy = transform.position.y;
 
 		putBallBack ();
+
 		if (x2)
 		{
 			showsum.showPlus (2);
@@ -115,6 +126,14 @@ public class BallArk : MonoBehaviour {
 				showsum.showPlus (0);
 				particlelife2 = 0.40f;
 				x2 = false;
+			}
+		}
+		if (bGoal) 
+		{
+			if (cGoal == null) {
+				cGoal = (GameObject)Instantiate (Goal, Goal.transform.position, Goal.transform.rotation);
+				//cGoal.GetComponent<ShowGoal> ().PlayGoalUI ();
+				bGoal = false;
 			}
 		}
 	}
@@ -146,11 +165,15 @@ public class BallArk : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody>().angularDrag = 1000.0f;
 		GoalKeeper.speedkeeper = 0.0f;
 		GameManager.arbrito = false;
+		Destroy (copyCoin);
+		Destroy (copyGrab);
 
 		speed = 0.0f;
 	}
 	public void GameWin()
 	{
+		bGoal = true;
+
 		//restart.gameObject.SetActive (true);
 		nextL.gameObject.SetActive (true);
 		gameObject.GetComponent<Rigidbody>().drag = 1000.0f;	
@@ -158,11 +181,11 @@ public class BallArk : MonoBehaviour {
 		GoalKeeper.speedkeeper = 0.0f;
 		GameManager.arbrito = false;
 		speed = 0.0f;
-
+		Destroy (copyCoin);
+		Destroy (copyGrab);
 		showsum.showPlus(10);
+		GameManager.Instance.sumGoal ();
 
-		for(int i= 0; i<10; i++)
-			GameManager.Instance.sumPoints();
 
 	}
 	void ShowX2()
@@ -175,24 +198,17 @@ public class BallArk : MonoBehaviour {
 
 
 	}
-	void showP()
+	void ShowSumx1()
 	{
-		if (showPart) 
-		{
-			showsum.showPlus(1);
-			particle.SetActive(true);
-
-			particlelife -=Time.deltaTime;
-
-			if (particlelife < 0.0f) {
-				particle.SetActive (false);
-				showPart = false;
-				showsum.showPlus(0);
-				particlelife = 0.40f;
-			}
+		showsum.showPlus (1);
+		particlelife -= Time.deltaTime;
+		if (particlelife < 0.0f) {
+			showsum.showPlus (0);
+			particlelife = 0.40f;
+			showPart = false;
 		}
-
 	}
+
 
 	void OnCollisionEnter(Collision other)
 	{
@@ -225,9 +241,9 @@ public class BallArk : MonoBehaviour {
 			x2counter++;
 			GameManager.oldScore++;
 			Destroy (other.gameObject);
-
+			showPart = true;
 			GameManager.Instance.sumPoints();
-			if (x2counter > 1)
+			if (GameManager.Instance.x2Boost)
 			{
 				ShowX2 ();
 				x2 = true;
@@ -235,16 +251,26 @@ public class BallArk : MonoBehaviour {
 				GameManager.Instance.sumPoints();
 				GameManager.oldScore++;
 			}
+				
+			cparticle = (GameObject)Instantiate (particle, other.transform.position, other.transform.rotation);
+			Destroy (cparticle, 0.40f);
 
-			showPart = true;
-
-			particle.gameObject.transform.position = new Vector3 (other.transform.position.x, other.transform.position.y, particle.transform.position.z);
-			//SpawnGrab 5%
-			if (Random.value <= 0.05f) 
+			//SpawnGrab 4%
+			if (Random.value <= 0.03f) 
 			{
-				copyGrab = (GameObject)Instantiate (GrabBall, other.transform.position, other.transform.rotation);
-				Destroy (copyGrab, 8.0f);
+				//if (copyCoin == null) {
+					copyGrab = (GameObject)Instantiate (GrabBall, other.transform.position, other.transform.rotation);
+					Destroy (copyGrab, 8.0f);
+				//}
 
+			}
+			//SpawnCoin 6%
+			if (Random.value <= 0.07f) 
+			{
+				//if (copyGrab == null) {
+					copyCoin = (GameObject)Instantiate (coin, other.transform.position, other.transform.rotation);
+					Destroy (copyCoin, 8.0f);
+				//}
 
 			}
 		}

@@ -17,7 +17,7 @@ public class NextLevel : MonoBehaviour {
 		
 	}
 
-	void OnMouseDown ()
+	void OnMouseUp ()
 	{
 		PlayerArk.FirstShot = true;
 		GoalKeeper.speedkeeper = 17.0f;

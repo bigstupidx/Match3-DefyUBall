@@ -77,6 +77,15 @@ public class GameManager : MonoBehaviour
 	public bool showArs=false;
 	private bool showArsOnce = true;
 
+	public bool x2Boost = false;
+	private float tBoost;
+
+	private float puntoInicialXL;
+	private float puntoInicialXR;
+	private float pong1;
+	private float pong2;
+	public float speed = 2.0f;
+	public float distance = 1.0f;
 
 	void Awake ()
 	{
@@ -100,14 +109,15 @@ public class GameManager : MonoBehaviour
 
 		showsum = FindObjectOfType<ShowSum> ();
 
+
 		StartGame ();
 
 		timeToAdvance = 0.3f;
 		advanceDistance = 0.1f;
 
 		waitforNextRow = 16.0f;
-
-
+		puntoInicialXL = arrow1.transform.position.x;
+		puntoInicialXR = arrow2.transform.position.x;
 	}
 
 
@@ -123,9 +133,9 @@ public class GameManager : MonoBehaviour
 		nextFormation ();
 		GameManager.Instance.isMenu = true;
 
-		showsum.showPlus (0);
-		arrow1.gameObject.SetActive (false);
-		arrow2.gameObject.SetActive (false);
+
+		//arrow1.gameObject.SetActive (false);
+		//arrow2.gameObject.SetActive (false);
 
 
 
@@ -134,6 +144,7 @@ public class GameManager : MonoBehaviour
 
 	public void nextFormation ()
 	{
+		DestroyImmediate (ball.cGoal);
 		DestroyImmediate (currentFormation);
 
 		pspeed.canMove = false;
@@ -220,20 +231,23 @@ public class GameManager : MonoBehaviour
 		//Debug.Log ("time; " +Time.time.ToString("n0"));
 		//Debug.Log ("currentL " + currentLevel);
 		//Debug.Log("makerow: "+ doRow);
-		if (currentLevel == 1){
-			if (showArsOnce == true) {
-				if (showArs) {
-					arrow1.gameObject.SetActive (true);
-					arrow2.gameObject.SetActive (true);
+		//if (currentLevel == 1){
+			//if (showArsOnce == true) {
+			//	if (showArs) {
+					/*arrow1.gameObject.SetActive (true);
+					arrow2.gameObject.SetActive (true);*/
 					showArrows ();
 
-				}
-			}
-			if(!showArs){
+				//}
+			//}
+			/*if(!showArs){
 				arrow1.gameObject.SetActive (false);
 				arrow2.gameObject.SetActive (false);
-			}
-		}
+			}*/
+	//	}
+
+		if (x2Boost)
+			TimeX2boost ();
 
 		pspawn = playerSpawn.transform.position.x;
 		if (score < 0)
@@ -272,32 +286,16 @@ public class GameManager : MonoBehaviour
 
 	public void showArrows ()
 	{
-		arrowt1 += Time.deltaTime;
-		arrowt2 += Time.deltaTime;
-		arrowTimer += Time.deltaTime;
+		/*arrow1.GetComponent<RectTransform>().anchoredPosition = new Vector3 (-17.71f, -41.0f, 0.0f);
+		arrow2.GetComponent<RectTransform>().anchoredPosition = new Vector3 (17.71f, -41.0f, 0.0f);*/
+		
+		pong1 = Mathf.PingPong (Time.time * speed, distance);
 
-		if (arrowt1 >= 0.0f && arrowt1 <= 0.3f)
-			arrow1.transform.position = new Vector2 (arrow1.transform.position.x - 0.1f, arrow1.transform.position.y);
-		else if (arrowt1 > 0.3f && arrowt1 <= 0.6f) {
-			arrow1.transform.position = new Vector2 (arrow1.transform.position.x + 0.1f, arrow1.transform.position.y);
-		}
-		if (arrowt1 >= 0.6f)
-			arrowt1 = 0.0f;
+		arrow1.gameObject.transform.position = new Vector3 (pong1+ puntoInicialXL, -41.0f, transform.position.z);
 
-		if (arrowt2 >= 0.0f && arrowt2 <= 0.3f)
-			arrow2.transform.position = new Vector2 (arrow2.transform.position.x + 0.1f, arrow2.transform.position.y);
-		else if (arrowt2 > 0.3f && arrowt2 <= 0.6f) {
-			arrow2.transform.position = new Vector2 (arrow2.transform.position.x - 0.1f, arrow2.transform.position.y);
-		}
-		if (arrowt2 >= 0.6f)
-			arrowt2 = 0.0f;
+		pong2 = Mathf.PingPong (Time.time * speed, distance);
 
-		if (arrowTimer >= 3.0f && arrowTimer <= 3.1f) {
-			showArs = false;
-			arrowTimer = 0.0f;
-			showArsOnce = false;
-
-		}
+		arrow2.gameObject.transform.position = new Vector3 (pong2+ puntoInicialXR, -41.0f, transform.position.z);
 	}
 
 
@@ -319,13 +317,15 @@ public class GameManager : MonoBehaviour
 		DestroyLive ();
 		isMenu = true;
 		ball.GameEnd ();
+
+		Destroy (arb.cardC);
+		Destroy (arb.cardCR);
 	
 	}
 
 	public void GameWin ()
 	{
-		for (int i = 0; i < 5; i++)
-			GameManager.Instance.sumPoints ();
+		
 		
 		GameManager.arbrito = false;
 		advance = false;
@@ -333,6 +333,9 @@ public class GameManager : MonoBehaviour
 		rowTime = 0.0f;
 		ball.GameWin ();
 		isMenu = true;
+		Destroy (arb.cardC);
+		Destroy (arb.cardCR);
+
 
 	}
 
@@ -349,6 +352,11 @@ public class GameManager : MonoBehaviour
 	public void sumPoints ()
 	{
 		this.score++;
+	}
+
+	public void sumGoal()
+	{
+		this.score += 10;
 	}
 
 	void makeRow ()
@@ -418,7 +426,7 @@ public class GameManager : MonoBehaviour
 			Live1 = Instantiate (liveshow [0]);
 			Live1.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			Live1.transform.localScale = new Vector3 (42, 42, 42);	
-			Live1.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (300.0f, 960.0f, 0.0f);
+			Live1.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (-114.0f, -1048.0f, 0.0f);
 
 			
 		}
@@ -426,12 +434,12 @@ public class GameManager : MonoBehaviour
 			Live1 = Instantiate (liveshow [0]);
 			Live1.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			Live1.transform.localScale = new Vector3 (42, 42, 42);	
-			Live1.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (300.0f, 960.0f, 0.0f);
+			Live1.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (-114.0f, -1048.0f, 0.0f);
 
 			Live2 = Instantiate (liveshow [1]);
 			Live2.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			Live2.transform.localScale = new Vector3 (42, 42, 42);	
-			Live2.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (400.0f, 960.0f, 0.0f);
+			Live2.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (6.0f, -1048.0f, 0.0f);
 
 
 
@@ -440,17 +448,17 @@ public class GameManager : MonoBehaviour
 			Live1 = Instantiate (liveshow [0]);
 			Live1.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			Live1.transform.localScale = new Vector3 (42, 42, 42);	
-			Live1.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (300.0f, 960.0f, 0.0f);
+			Live1.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (-114.0f, -1048.0f, 0.0f);
 
 			Live2 = Instantiate (liveshow [1]);
 			Live2.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			Live2.transform.localScale = new Vector3 (42, 42, 42);	
-			Live2.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (400.0f, 960.0f, 0.0f);
+			Live2.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (6.0f, -1048.0f, 0.0f);
 
 			Live3 = Instantiate (liveshow [2]);
 			Live3.transform.SetParent (FindObjectOfType<Canvas> ().transform);
 			Live3.transform.localScale = new Vector3 (42, 42, 42);	
-			Live3.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (500.0f, 960.0f, 0.0f);
+			Live3.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (126.0f, -1048.0f, 0.0f);
 
 		}
 
@@ -469,6 +477,17 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+
+	void TimeX2boost()
+	{
+		tBoost += Time.deltaTime;
+
+		if (tBoost >= 5.0f) 
+		{
+			x2Boost = false;
+			tBoost = 0.0f;
+		}
+	}
 
 
 

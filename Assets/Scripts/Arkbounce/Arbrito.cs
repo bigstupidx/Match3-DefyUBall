@@ -7,9 +7,9 @@ public class Arbrito : MonoBehaviour {
 
 	private GameObject cardV;
 	private GameObject card;
-	private GameObject cardC;
+	public GameObject cardC;
 	private GameObject cardR;
-	private GameObject cardCR;
+	public GameObject cardCR;
 
 	private GameObject player;
 	private float force = 50.0f;
