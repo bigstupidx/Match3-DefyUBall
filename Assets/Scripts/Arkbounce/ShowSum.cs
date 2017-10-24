@@ -22,7 +22,7 @@ public class ShowSum : MonoBehaviour
 	{
 		
 	}
-
+    //ShowSumScore
 	public int showPlus (int plus)
 	{
 		

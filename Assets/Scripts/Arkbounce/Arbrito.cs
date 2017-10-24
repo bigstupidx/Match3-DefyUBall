@@ -63,7 +63,7 @@ public class Arbrito : MonoBehaviour {
 		//Debug.Log ("timer= " + timer);
 		/*Debug.Log ("spot2= " + gospot2);*/
 		if (!PlayerArk.FirstShot) {
-			if (GameManager.arbrito) {
+			if (GameManagerArk.arbrito) {
 				boolSets ();
 				timer += Time.deltaTime;
 
@@ -113,14 +113,14 @@ public class Arbrito : MonoBehaviour {
 		
 				movePos ();
 			}
-			if (GameManager.arbrito == false)
+			if (GameManagerArk.arbrito == false)
 				ResetEverything ();
 		}
 	}
 
 	void shootCardY()
 	{
-		if (GameManager.arbrito) {
+		if (GameManagerArk.arbrito) {
 			if (Time.time > next) {
 				cardC = (GameObject)Instantiate (card, cardV.transform.position, card.transform.rotation);
 				cardC.gameObject.GetComponent<Rigidbody> ().velocity = cardV.transform.forward * force;
@@ -131,7 +131,7 @@ public class Arbrito : MonoBehaviour {
 
 	void shootCardR()
 	{
-		if (GameManager.arbrito) {
+		if (GameManagerArk.arbrito) {
 			
 				cardCR = (GameObject)Instantiate (cardR, cardV.transform.position, cardR.transform.rotation);
 				cardCR.gameObject.GetComponent<Rigidbody> ().velocity = cardV.transform.forward * force;

@@ -28,14 +28,14 @@ public class BMEnu : MonoBehaviour {
 	void OnMouseDown()
 	{
 
-		GameManager.oldScore = 0;
+        GameManagerArk.oldScore = 0;
 
 		//pspeed.speed = 100.0f;
 		PlayerArk.canshoot = true;
 		ball.speed = 80.0f;
 		arb.ResetEverything();
 		ball.wini = false;
-		GameManager.arbrito = true;
+        GameManagerArk.arbrito = true;
 
 		GameLogic.GameOver = false;
 		GameLogic.Points = 0;

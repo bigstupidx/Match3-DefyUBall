@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerArk : MonoBehaviour
 {
 
-
+    public GameObject PowerUPP;
+    private GameObject showPowerEffect;
 	private bool cantgoR = false;
 	private bool cantgoL = false;
 
@@ -82,18 +83,18 @@ public class PlayerArk : MonoBehaviour
 canCatch = true;				
 
 }*/
-		if (GameManager.Instance.isMenu) {
+		if (GameManagerArk.Instance.isMenu) {
 
 			if (Input.GetMouseButtonDown (0)) {
 
-				GameManager.Instance.isMenu = false;
+                GameManagerArk.Instance.isMenu = false;
 			}
 		}
 	}
 
 	void PlayerMovementKeyboard (float speed)
 	{
-		if (!GameManager.Instance.isMenu) {
+		if (!GameManagerArk.Instance.isMenu) {
 			if (canMove) {
 				StopGoinSides ();
 				bool moving = false;
@@ -121,7 +122,7 @@ canCatch = true;
 
 	void PlayerMovementTouch (float speed)
 	{
-		if (!GameManager.Instance.isMenu) {
+		if (!GameManagerArk.Instance.isMenu) {
 			if (canMove) {
 				if (Input.touchCount > 0) {
 
@@ -160,6 +161,7 @@ canCatch = true;
 	public void shootBall (float force)
 	{
 		if (FirstShot == true) {
+            canMove = false;
 			arrow.SetActive (true);
 			ball.transform.position = new Vector2 (this.transform.position.x, arrow.transform.position.y);
 //make arrow follow player
@@ -167,11 +169,11 @@ canCatch = true;
 		}
 
 		if (canshoot) {
-			if (!GameManager.Instance.isMenu) {
+			if (!GameManagerArk.Instance.isMenu) {
 
 				if (Input.GetMouseButton (0)) {					
 					FirstShot = false;
-					GameManager.Instance.showArs = true;
+					GameManagerArk.Instance.showArs = true;
 					ball.gameObject.GetComponent<Rigidbody> ().velocity = arrow.transform.up * force;
 					arrow.SetActive (false);
 					takeBall = false;
@@ -203,7 +205,7 @@ canCatch = true;
 
 	void hitByRed ()
 	{
-		GameManager.Instance.GameEnd ();
+        GameManagerArk.Instance.GameEnd ();
 	}
 
 	void StopGoinSides ()
@@ -245,11 +247,13 @@ canCatch = true;
 			hitByRed ();
 		}
 		if (other.gameObject.tag == "hand") {
-			canCatch = true;
+            showPowerEffect = (GameObject)Instantiate(PowerUPP, other.transform.position, other.transform.rotation);
+            canCatch = true;
 			Destroy (other.gameObject);
 		}
 		if (other.gameObject.tag == "DoublePoints") {
-			GameManager.Instance.x2Boost = true;
+            showPowerEffect = (GameObject)Instantiate(PowerUPP, other.transform.position, other.transform.rotation);
+            GameManagerArk.Instance.x2Boost = true;
 			Destroy (other.gameObject);
 		}
 

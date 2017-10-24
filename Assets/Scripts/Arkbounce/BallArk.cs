@@ -44,6 +44,9 @@ public class BallArk : MonoBehaviour {
 	private float particlelife2 = 0.40f;
 	private bool showPart = false;
 
+    public GameObject hitPlayer;
+    private GameObject showHitPlayer;
+
 
 	Vector3 lastPosition = Vector3.zero;
 	public float speed;
@@ -164,7 +167,7 @@ public class BallArk : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody>().drag = 1000.0f;
 		gameObject.GetComponent<Rigidbody>().angularDrag = 1000.0f;
 		GoalKeeper.speedkeeper = 0.0f;
-		GameManager.arbrito = false;
+        GameManagerArk.arbrito = false;
 		Destroy (copyCoin);
 		Destroy (copyGrab);
 
@@ -179,12 +182,12 @@ public class BallArk : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody>().drag = 1000.0f;	
 		gameObject.GetComponent<Rigidbody>().angularDrag = 1000.0f;
 		GoalKeeper.speedkeeper = 0.0f;
-		GameManager.arbrito = false;
+        GameManagerArk.arbrito = false;
 		speed = 0.0f;
 		Destroy (copyCoin);
 		Destroy (copyGrab);
 		showsum.showPlus(10);
-		GameManager.Instance.sumGoal ();
+        GameManagerArk.Instance.sumGoal ();
 
 
 	}
@@ -222,8 +225,10 @@ public class BallArk : MonoBehaviour {
 				rigidbody.velocity = new Vector3 (bouncinessX, bounciness,0);
 			
 			x2counter = 0.0f;
-		
-		}
+
+            showHitPlayer = (GameObject)Instantiate(hitPlayer, other.transform.position, other.transform.rotation);
+
+        }
 		if (other.gameObject.tag == "limitL" || other.gameObject.tag == "limitR"|| other.gameObject.tag =="Palo") 
 		{			
 			rigidbody.velocity = new Vector3 (other.relativeVelocity.x, -other.relativeVelocity.y);
@@ -239,17 +244,17 @@ public class BallArk : MonoBehaviour {
 		if (other.gameObject.tag == "cube") 
 		{
 			x2counter++;
-			GameManager.oldScore++;
+            GameManagerArk.oldScore++;
 			Destroy (other.gameObject);
 			showPart = true;
-			GameManager.Instance.sumPoints();
-			if (GameManager.Instance.x2Boost)
+            GameManagerArk.Instance.sumPoints();
+			if (GameManagerArk.Instance.x2Boost)
 			{
 				ShowX2 ();
 				x2 = true;
 
-				GameManager.Instance.sumPoints();
-				GameManager.oldScore++;
+                GameManagerArk.Instance.sumPoints();
+                GameManagerArk.oldScore++;
 			}
 				
 			cparticle = (GameObject)Instantiate (particle, other.transform.position, other.transform.rotation);
@@ -276,9 +281,9 @@ public class BallArk : MonoBehaviour {
 		}
 		if (other.gameObject.tag == "GameOver")
 		{
-			//GameEnd ();
-			GameManager.arbrito = false;
-			GameManager.Instance.GameEnd();
+            //GameEnd ();
+            GameManagerArk.arbrito = false;
+            GameManagerArk.Instance.GameEnd();
 			x2counter = 0.0f;
 		}
 
@@ -287,8 +292,8 @@ public class BallArk : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "porteria")
 		{
-			GameManager.arbrito = false;
-			GameManager.Instance.advance = false;
+            GameManagerArk.arbrito = false;
+            GameManagerArk.Instance.advance = false;
 			GameWin ();
 			wini = true;
 			x2counter = 0.0f;

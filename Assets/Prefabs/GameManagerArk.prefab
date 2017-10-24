@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1638232476912286}
+  m_IsPrefabParent: 1
+--- !u!1 &1638232476912286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4728678902226612}
+  - component: {fileID: 114207911121673950}
+  m_Layer: 0
+  m_Name: GameManagerArk
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4728678902226612
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638232476912286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114207911121673950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638232476912286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332f68b47dc43d74a8e4dd1c95e113ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arkball: {fileID: 1032800135990538, guid: 148a6795d0a40694e97ab3e3ea57dff3, type: 2}
+  setTouches: 0
+  isMenu: 0
+  restart: {fileID: 0}
+  nextL: {fileID: 0}
+  liveshow:
+  - {fileID: 1156951356415472, guid: fe5372d2a0da26141aa7f7edd17480c6, type: 2}
+  - {fileID: 1637216348765120, guid: 3fb18f9494b55504a8c22e1fb77d322c, type: 2}
+  - {fileID: 1788208457589324, guid: c778178ff14602b4e8d961103232e800, type: 2}
+  Live1: {fileID: 0}
+  Live2: {fileID: 0}
+  Live3: {fileID: 0}
+  formationPrefabs:
+  - {fileID: 1329018923400222, guid: 9aeb1889741c6544685ace1843fc0a06, type: 2}
+  - {fileID: 1953839599983718, guid: 21a61368daff2844cb6595f5db3f2d47, type: 2}
+  - {fileID: 1395205870475002, guid: 6468155e35662aa46b588f735a9f2b74, type: 2}
+  - {fileID: 1998990609730308, guid: 82abbb82d8a3ed144bcdc25522de2c1e, type: 2}
+  - {fileID: 1139476299758428, guid: 4f2ef4fb627872d4486f2e1472f3d64a, type: 2}
+  - {fileID: 1072373736198786, guid: 6dba78272ccff9b4bba5564e6c941ddb, type: 2}
+  - {fileID: 1600587944370394, guid: dbc0b2c0e1d02e146ab58542219e290f, type: 2}
+  - {fileID: 1008522725411674, guid: f95c87488e275e54f8762953cb6426c0, type: 2}
+  - {fileID: 1470049528510710, guid: 21cbfe82b5348914cb6138a5d6448f8d, type: 2}
+  score: 0
+  lives: 4
+  timeMenu: 1
+  currentFormation: {fileID: 0}
+  goRow: {fileID: 0}
+  advance: 0
+  doRow: 0
+  countDown: 0
+  arrow1: {fileID: 0}
+  arrow2: {fileID: 0}
+  showArs: 0
+  x2Boost: 0
+  speed: 2
+  distance: 1
+  ShowDeathMenu: {fileID: 0}

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class RestartArk : MonoBehaviour {
 
-	private GameManager score;
-	private GameManager formations;
+	private GameManagerArk score;
+	private GameManagerArk formations;
 	//private GameManager keepscore;
 	//private Arbrito arb;
 
 
 	// Use this for initialization
 	void Start () {
-		score = FindObjectOfType<GameManager>();
-		formations = FindObjectOfType<GameManager>();
+		score = FindObjectOfType<GameManagerArk>();
+		formations = FindObjectOfType<GameManagerArk>();
 		//keepscore = FindObjectOfType<GameManager>();
 		//arb = FindObjectOfType<Arbrito>();
 	}
@@ -26,13 +26,13 @@ public class RestartArk : MonoBehaviour {
 	void OnMouseUp(){			
 
 			Input.ResetInputAxes ();
-			//GameManager.Instance.isMenu = false;
+        //GameManager.Instance.isMenu = false;
 
-			GameManager.arbrito = true;
+        GameManagerArk.arbrito = true;
 
-			score.score -= GameManager.oldScore;
-			GameManager.oldScore = 0;
-			GameManager.Instance.nextFormation ();
+			score.score -= GameManagerArk.oldScore;
+        GameManagerArk.oldScore = 0;
+        GameManagerArk.Instance.nextFormation ();
 
 	}
 }

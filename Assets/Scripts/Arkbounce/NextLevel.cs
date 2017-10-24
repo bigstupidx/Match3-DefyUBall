@@ -21,11 +21,11 @@ public class NextLevel : MonoBehaviour {
 	{
 		PlayerArk.FirstShot = true;
 		GoalKeeper.speedkeeper = 17.0f;
-		GameManager.arbrito = true;
-		GameManager.oldScore = 0;
-		GameManager.currentLevel++;
+        GameManagerArk.arbrito = true;
+        GameManagerArk.oldScore = 0;
+        GameManagerArk.currentLevel++;
 		Input.ResetInputAxes ();
-		//GameManager.Instance.StartGame ();
-		GameManager.Instance.nextFormation ();
-	}
+        GameManagerArk.Instance.nextFormation ();
+        gameObject.SetActive(false);
+    }
 }

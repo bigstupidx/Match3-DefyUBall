@@ -19,9 +19,7 @@ public class MakeEnd : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "cube")
 		{
-
-			//Debug.Log ("FUCK FUCK FUCK");
-			GameManager.Instance.GameEnd ();
+            GameManagerArk.Instance.GameEnd ();
 		}
 	}
 }
